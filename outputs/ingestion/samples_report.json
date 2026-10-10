@@ -1,0 +1,170 @@
+{
+  "all_checks_pass": true,
+  "checks": [
+    {
+      "actual": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e",
+      "check": "cost_100.sha256",
+      "expected": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e",
+      "pass": true
+    },
+    {
+      "actual": 100,
+      "check": "cost_100.unique_ids",
+      "expected": 100,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "cost_100.ids_missing_from_full_file",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "cost_100.rows_differing_from_full_file",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": "a94e31663ee7b7eaa77e23b7a8425b530cc0c866ed5e714953172a0afef6a12f",
+      "check": "checkpoint_500.sha256",
+      "expected": "a94e31663ee7b7eaa77e23b7a8425b530cc0c866ed5e714953172a0afef6a12f",
+      "pass": true
+    },
+    {
+      "actual": 500,
+      "check": "checkpoint_500.unique_ids",
+      "expected": 500,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "checkpoint_500.ids_missing_from_full_file",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "checkpoint_500.rows_differing_from_full_file",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": "eaa62ca6d44d717302904a9c922e99b0b4584d174309cb45295ecbc2ba2a91b5",
+      "check": "analysis_10000.sha256",
+      "expected": "eaa62ca6d44d717302904a9c922e99b0b4584d174309cb45295ecbc2ba2a91b5",
+      "pass": true
+    },
+    {
+      "actual": 10000,
+      "check": "analysis_10000.unique_ids",
+      "expected": 10000,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "analysis_10000.ids_missing_from_full_file",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "analysis_10000.rows_differing_from_full_file",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": "1a125c3e509f58b0246ba16d0ea332675a53ffadb1928be4338a0bd7053a11c7",
+      "check": "golden_50.sha256",
+      "expected": "1a125c3e509f58b0246ba16d0ea332675a53ffadb1928be4338a0bd7053a11c7",
+      "pass": true
+    },
+    {
+      "actual": 50,
+      "check": "golden_50.unique_ids",
+      "expected": 50,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "golden_50.ids_missing_from_full_file",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "golden_50.rows_differing_from_full_file",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": 100,
+      "check": "rows.cost_100",
+      "expected": 100,
+      "pass": true
+    },
+    {
+      "actual": 500,
+      "check": "rows.checkpoint_500",
+      "expected": 500,
+      "pass": true
+    },
+    {
+      "actual": 10000,
+      "check": "rows.analysis_10000",
+      "expected": 10000,
+      "pass": true
+    },
+    {
+      "actual": 50,
+      "check": "rows.golden_50",
+      "expected": 50,
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "cost_100 == first 100 of checkpoint_500",
+      "expected": true,
+      "pass": true
+    },
+    {
+      "actual": true,
+      "check": "checkpoint_500 == first 500 of analysis_10000",
+      "expected": true,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "golden_50 disjoint from development samples",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": 50,
+      "check": "golden_50 texts remain in the full run (nonempty, queued)",
+      "expected": 50,
+      "pass": true
+    }
+  ],
+  "golden_label_columns_loaded": false,
+  "model_calls": 0,
+  "samples": {
+    "analysis_10000": {
+      "file": "analysis_10000.csv",
+      "rows": 10000
+    },
+    "checkpoint_500": {
+      "file": "checkpoint_500.csv",
+      "rows": 500
+    },
+    "cost_100": {
+      "file": "cost_100.csv",
+      "rows": 100
+    },
+    "golden_50": {
+      "file": "golden_50_to_label.csv",
+      "rows": 50
+    }
+  },
+  "stage": "sample_verification"
+}

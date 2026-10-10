@@ -1,0 +1,262 @@
+{
+  "all_checks_pass": true,
+  "checks": [
+    {
+      "actual": 660622,
+      "check": "profile.records == rows read",
+      "expected": 660622,
+      "pass": true
+    },
+    {
+      "actual": 13,
+      "check": "profile.empty_review_text == quarantined empty rows",
+      "expected": 13,
+      "pass": true
+    },
+    {
+      "actual": 660622,
+      "check": "every unique source ID has exactly one status",
+      "expected": 660622,
+      "pass": true
+    },
+    {
+      "actual": 660609,
+      "check": "pending == nonempty rows",
+      "expected": 660609,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "no quarantine other than empty_review_text at ingestion",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": "1fc85de68a304dd8978b537cfa58793d5f41cbaf417fa32cb53899f83a2fcef6",
+      "check": "file_sha256",
+      "expected": "1fc85de68a304dd8978b537cfa58793d5f41cbaf417fa32cb53899f83a2fcef6",
+      "pass": true
+    },
+    {
+      "actual": 97400616,
+      "check": "file_bytes",
+      "expected": 97400616,
+      "pass": true
+    },
+    {
+      "actual": 660622,
+      "check": "profile.records",
+      "expected": 660622,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "profile.duplicate_review_ids",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": 13,
+      "check": "profile.empty_review_text",
+      "expected": 13,
+      "pass": true
+    },
+    {
+      "actual": 159701,
+      "check": "profile.missing_app_version",
+      "expected": 159701,
+      "pass": true
+    },
+    {
+      "actual": {
+        "2022-05": 15461,
+        "2022-06": 30338,
+        "2022-07": 32784,
+        "2022-08": 30732,
+        "2022-09": 26933,
+        "2022-10": 27572,
+        "2022-11": 27349,
+        "2022-12": 31744,
+        "2023-01": 28609,
+        "2023-02": 20889,
+        "2023-03": 27238,
+        "2023-04": 25014,
+        "2023-05": 28062,
+        "2023-06": 27117,
+        "2023-07": 85079,
+        "2023-08": 30438,
+        "2023-09": 41634,
+        "2023-10": 89104,
+        "2023-11": 34525
+      },
+      "check": "reviews_by_month",
+      "expected": {
+        "2022-05": 15461,
+        "2022-06": 30338,
+        "2022-07": 32784,
+        "2022-08": 30732,
+        "2022-09": 26933,
+        "2022-10": 27572,
+        "2022-11": 27349,
+        "2022-12": 31744,
+        "2023-01": 28609,
+        "2023-02": 20889,
+        "2023-03": 27238,
+        "2023-04": 25014,
+        "2023-05": 28062,
+        "2023-06": 27117,
+        "2023-07": 85079,
+        "2023-08": 30438,
+        "2023-09": 41634,
+        "2023-10": 89104,
+        "2023-11": 34525
+      },
+      "pass": true
+    },
+    {
+      "actual": {
+        "1": 242620,
+        "2": 31034,
+        "3": 33268,
+        "4": 54140,
+        "5": 299560
+      },
+      "check": "reviews_by_rating",
+      "expected": {
+        "1": 242620,
+        "2": 31034,
+        "3": 33268,
+        "4": 54140,
+        "5": 299560
+      },
+      "pass": true
+    },
+    {
+      "actual": "2022-05-17 00:01:07",
+      "check": "first_review",
+      "expected": "2022-05-17 00:01:07",
+      "pass": true
+    },
+    {
+      "actual": "2023-11-15 23:16:10",
+      "check": "last_review",
+      "expected": "2023-11-15 23:16:10",
+      "pass": true
+    },
+    {
+      "actual": 660609,
+      "check": "nonempty_to_classify",
+      "expected": 660609,
+      "pass": true
+    },
+    {
+      "actual": 13,
+      "check": "empty_text_quarantines",
+      "expected": 13,
+      "pass": true
+    },
+    {
+      "actual": 484189,
+      "check": "distinct_nonempty_texts (assignment docs)",
+      "expected": 484189,
+      "pass": true
+    }
+  ],
+  "code_version": "ingest-v1",
+  "field_quality": {
+    "blank_review_id": 0,
+    "duplicate_review_id_examples": [],
+    "duplicate_review_ids": 0,
+    "empty_review_text": 13,
+    "invalid_rating": 0,
+    "missing_app_version": 159701,
+    "multiline_text": 68,
+    "nonnumeric_likes": 0,
+    "records": 660622,
+    "unique_review_ids": 660622,
+    "unparseable_timestamp": 0
+  },
+  "loaded_this_run": false,
+  "model_calls": 0,
+  "notes": [
+    "Nonempty reviews are queued as 'pending'; pending is not a quarantine and not a completed classification.",
+    "Only empty or whitespace-only texts are quarantined at ingestion (reason empty_review_text).",
+    "Missing app_version and star ratings do not affect classification eligibility."
+  ],
+  "profile": {
+    "counts": {
+      "duplicate_review_ids": 0,
+      "empty_review_text": 13,
+      "missing_app_version": 159701,
+      "records": 660622
+    },
+    "file_sha256": "1fc85de68a304dd8978b537cfa58793d5f41cbaf417fa32cb53899f83a2fcef6",
+    "first_review": "2022-05-17 00:01:07",
+    "last_review": "2023-11-15 23:16:10",
+    "parsed_rows_sha256": "eb5ea1e15f020212004a5b1e2f873e45a9f105d1b4516ad077020492364f71ff",
+    "reviews_by_month": {
+      "2022-05": 15461,
+      "2022-06": 30338,
+      "2022-07": 32784,
+      "2022-08": 30732,
+      "2022-09": 26933,
+      "2022-10": 27572,
+      "2022-11": 27349,
+      "2022-12": 31744,
+      "2023-01": 28609,
+      "2023-02": 20889,
+      "2023-03": 27238,
+      "2023-04": 25014,
+      "2023-05": 28062,
+      "2023-06": 27117,
+      "2023-07": 85079,
+      "2023-08": 30438,
+      "2023-09": 41634,
+      "2023-10": 89104,
+      "2023-11": 34525
+    },
+    "reviews_by_rating": {
+      "1": 242620,
+      "2": 31034,
+      "3": 33268,
+      "4": 54140,
+      "5": 299560
+    }
+  },
+  "run_id": "ingest-20261010T031400Z-1fc85de6",
+  "source": {
+    "bytes": 97400616,
+    "name": "spotify_reviews_18months.csv",
+    "parsed_rows_sha256": "eb5ea1e15f020212004a5b1e2f873e45a9f105d1b4516ad077020492364f71ff",
+    "sha256": "1fc85de68a304dd8978b537cfa58793d5f41cbaf417fa32cb53899f83a2fcef6"
+  },
+  "stage": "ingest",
+  "statuses": {
+    "completed": 0,
+    "pending": 660609,
+    "quarantined": 13
+  },
+  "text": {
+    "distinct_nonempty_texts": 484189,
+    "duplicate_text_groups": 15922,
+    "empty_rows_quarantined": 13,
+    "largest_duplicate_text_group": 12845,
+    "length_chars": {
+      "max": 1693,
+      "mean": 74.83,
+      "p50": 32,
+      "p90": 207,
+      "p99": 490,
+      "total": 49430325
+    },
+    "nonempty_rows": 660609,
+    "rows_in_duplicate_text_groups": 192342,
+    "rows_reusable_via_exact_text_cache": 176420
+  },
+  "timing": {
+    "finished_at": "2026-10-10T03:14:19.914755+00:00",
+    "load_seconds": 9.292,
+    "started_at": "2026-10-10T03:14:00.467451+00:00",
+    "total_seconds": 19.448
+  }
+}

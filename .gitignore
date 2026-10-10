@@ -1,0 +1,35 @@
+# Local credentials: never commit real keys
+.env
+.env.*
+!.env.example
+
+# Raw review data from the dataset ZIP (download separately; see README for source link and checksums)
+spotify_reviews_18months.csv
+cost_100.csv
+checkpoint_500.csv
+analysis_10000.csv
+golden_50_to_label.csv
+# Golden working file contains raw review text; commit decision pending
+golden/golden_50_labels.csv
+
+# Instructor-provided assignment document (not redistributed)
+*.docx
+
+# Local working state (SQLite databases, scratch files)
+work/
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+
+# Local self-check outputs must stay outside the submitted grading folder
+local-reference.json
+self-check.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS / editor
+.DS_Store

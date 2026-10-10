@@ -1,0 +1,40 @@
+{
+  "code": {
+    "pipeline/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pipeline/common.py": "6d32d2f44ed846eb578dda511ab98d561770e4ef28bdee93ca6d232f2878c200",
+    "pipeline/db.py": "b1799ab401b48f806ac7964411fb7c5b2cc70fdd9170cdff58e0b32fc90ccf37",
+    "pipeline/golden.py": "9a2acdade4b3ef6c50cf78be727c2d9fe990cc633fef47c9b2968ed5143b8c25",
+    "pipeline/ingest.py": "0dc88ce8bda3e929458cb6e668848cf329faf4b15d883bc389f3effb65194257",
+    "pipeline/samples.py": "2df0b3fe4b7f1d1d5bf726ae7fe9449a04a032ac1a7e8fb2c67f99f2e8782ed0"
+  },
+  "database": {
+    "path": "work/pipeline.sqlite",
+    "schema_version": "1"
+  },
+  "environment": {
+    "platform": "macOS-15.8-x86_64-i386-64bit-Mach-O",
+    "python": "3.13.15"
+  },
+  "outputs": {
+    "grading/ingestion.json": "5512dd793b0bde3bd51f28b20b440108f3c9bab31233819bea5f32ce19482153",
+    "outputs/ingestion/ingestion_report.json": "368e149a246078f2ba649e584e9f1aa978071a48791b26c39951608c0491ea9d",
+    "outputs/ingestion/quarantine.jsonl": "5606de7676fe884ee5bd624ad58d1260677eae604164aefb29788ef80827de24"
+  },
+  "provided_helper": {
+    "file": "check_submission.py",
+    "functions_used": [
+      "row_sha",
+      "csv_rows",
+      "profile",
+      "sha"
+    ],
+    "sha256": "d60bd66d84922d934c65b3d42b2c7d36cc738e8c75e2d6f2b2f58bca3141c26d"
+  },
+  "run_id": "ingest-20261010T031400Z-1fc85de6",
+  "source": {
+    "bytes": 97400616,
+    "name": "spotify_reviews_18months.csv",
+    "parsed_rows_sha256": "eb5ea1e15f020212004a5b1e2f873e45a9f105d1b4516ad077020492364f71ff",
+    "sha256": "1fc85de68a304dd8978b537cfa58793d5f41cbaf417fa32cb53899f83a2fcef6"
+  }
+}

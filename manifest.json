@@ -1,0 +1,102 @@
+{
+  "source": {
+    "title": "3.4 Million Spotify Google Store Reviews",
+    "creator": "BwandoWando",
+    "url": "https://www.kaggle.com/datasets/bwandowando/3-4-million-spotify-google-store-reviews",
+    "download_url": "https://www.kaggle.com/api/v1/datasets/download/bwandowando/3-4-million-spotify-google-store-reviews?datasetVersionNumber=2",
+    "version": 2,
+    "publisher_license": "CC0: Public Domain",
+    "archive_sha256": "7b351f41fef9de9d8cba07ac40a300d20fd605ff0298a1885df0dbf0d66b3cbc",
+    "archive_bytes": 273598020,
+    "records": 3377423
+  },
+  "window": {
+    "start_inclusive": "2022-05-17",
+    "end_exclusive": "2023-11-17",
+    "first_review": "2022-05-17 00:01:07",
+    "last_review": "2023-11-15 23:16:10"
+  },
+  "transformations": [
+    "Keep all source rows in the fixed date window, in source order.",
+    "Drop the source row index, author_name, and pseudo_author_id columns.",
+    "Rename author_app_version to app_version; preserve retained field values.",
+    "Write UTF-8 CSV with LF line endings; preserve quoted multiline review text."
+  ],
+  "profile": {
+    "records": 660622,
+    "duplicate_review_ids": 0,
+    "empty_review_text": 13,
+    "missing_app_version": 159701
+  },
+  "reviews_by_month": {
+    "2022-05": 15461,
+    "2022-06": 30338,
+    "2022-07": 32784,
+    "2022-08": 30732,
+    "2022-09": 26933,
+    "2022-10": 27572,
+    "2022-11": 27349,
+    "2022-12": 31744,
+    "2023-01": 28609,
+    "2023-02": 20889,
+    "2023-03": 27238,
+    "2023-04": 25014,
+    "2023-05": 28062,
+    "2023-06": 27117,
+    "2023-07": 85079,
+    "2023-08": 30438,
+    "2023-09": 41634,
+    "2023-10": 89104,
+    "2023-11": 34525
+  },
+  "reviews_by_rating": {
+    "1": 242620,
+    "2": 31034,
+    "3": 33268,
+    "4": 54140,
+    "5": 299560
+  },
+  "samples": {
+    "seed": "berkeley-fall-2026-assignment-5-v1",
+    "method": "Lowest SHA-256(seed + ':' + review_id) values among unique nonempty valid-rating records.",
+    "golden": "First 50; blank labels for students. Excluded from development checkpoints. Original texts remain in the full final run; human answer labels are never model inputs.",
+    "analysis": "Next 10,000; uniform deterministic development and budget checkpoint before the required full-corpus run.",
+    "checkpoint": "First 500 of the analysis sample.",
+    "cost_pilot": "First 100 of the checkpoint sample; fixed input for the required measured cost/runtime calculator."
+  },
+  "files": {
+    "spotify_reviews_18months.csv": {
+      "bytes": 97400616,
+      "sha256": "1fc85de68a304dd8978b537cfa58793d5f41cbaf417fa32cb53899f83a2fcef6"
+    },
+    "checkpoint_500.csv": {
+      "bytes": 76170,
+      "sha256": "a94e31663ee7b7eaa77e23b7a8425b530cc0c866ed5e714953172a0afef6a12f"
+    },
+    "golden_50_to_label.csv": {
+      "bytes": 7905,
+      "sha256": "1a125c3e509f58b0246ba16d0ea332675a53ffadb1928be4338a0bd7053a11c7"
+    },
+    "analysis_10000.csv": {
+      "bytes": 1477793,
+      "sha256": "eaa62ca6d44d717302904a9c922e99b0b4584d174309cb45295ecbc2ba2a91b5"
+    },
+    "cost_100.csv": {
+      "bytes": 15466,
+      "sha256": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e"
+    }
+  },
+  "assignment_scope": {
+    "input_records": 660622,
+    "nonempty_to_classify": 660609,
+    "empty_text_quarantines": 13,
+    "final_input": "spotify_reviews_18months.csv",
+    "development_only": [
+      "cost_100.csv",
+      "checkpoint_500.csv",
+      "analysis_10000.csv"
+    ],
+    "grading_contract": "GRADING_CONTRACT.md",
+    "cost_calculator_spec": "COST_CALCULATOR.md"
+  }
+}

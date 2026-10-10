@@ -1,0 +1,2 @@
+# Phase 0-1 (ingestion and validation) uses only the Python standard library.
+# Requires Python >= 3.11. Third-party packages will be listed here when added.
