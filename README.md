@@ -5,24 +5,24 @@ A staged, auditable pipeline that turns 660,622 public Spotify Google Play revie
 Code owns record accounting, validation, caching, budgets and arithmetic; models only read
 language (classification, independent verification, issue naming, memo prose).
 
-> **Status (2026-10-12): final analysis complete; dashboard not yet deployed.** Ingestion is complete
+> **Status (2026-10-12): final analysis complete; dashboard deployed.** Ingestion is complete
 > for all 660,622 rows. The large-scale classification run finished at its cumulative $4.00 cap with
 > 284,709 reviews classified (every duplicated text plus 92,367 single texts in seeded order; 375,900
 > pending, 13 quarantined). The golden-50 evaluation, interruption/resume demonstration, independent
 > verifier, injection test, measured cold/warm pilot, issue naming, [memo](outputs/analysis/memo.md)
 > and recommendations are done, and the [grading export](grading/) passes the provided checker except
-> for the disclosed coverage gap. Still to come: deployment of the dashboard (built and tested
-> locally; see [`dashboard/`](dashboard/)) and the recording link. Everything labeled *measured* below comes from saved run files; anything produced by
+> for the disclosed coverage gap. The dashboard is live at <https://assignment5-insight-pipeline.vercel.app> (no login).
+> The interruption/resume recording is a GitHub Release asset (see below). Everything labeled *measured* below comes from saved run files; anything produced by
 > mock models in tests is labeled *synthetic* and is never reported as a result.
 
 | Item | Location / status |
 |---|---|
-| Live dashboard | Not deployed yet; database loaded in Neon Postgres and verified; code in [`dashboard/`](dashboard/) (backend API + page) |
+| Live dashboard | <https://assignment5-insight-pipeline.vercel.app> — no login or API key needed; backend API on Vercel reading Neon Postgres through a read-only role ([`/api/health`](https://assignment5-insight-pipeline.vercel.app/api/health)); code in [`dashboard/`](dashboard/) |
 | Grading export | [`grading/`](grading/) (final, 2026-10-12; provided checker: only `missing_records` / `unfinished_classification` for the 375,900 pending reviews) |
 | Ingestion report | [`outputs/ingestion/ingestion_report.json`](outputs/ingestion/ingestion_report.json) |
 | Enrichment run logs | [`outputs/runs/`](outputs/runs/) (`run_summary.json`, `progress.jsonl`, `run_log.jsonl` per run) |
-| Interruption/resume evidence | [`outputs/checkpoints/`](outputs/checkpoints/), [`evals/system/resume_evidence.json`](evals/system/resume_evidence.json), screen recording (link to be added) |
-| Golden-50 evaluation | [`evals/golden/`](evals/golden/) (aggregate metrics; per-case file pending a publication decision) |
+| Interruption/resume evidence | [`outputs/checkpoints/`](outputs/checkpoints/), [`evals/system/resume_evidence.json`](evals/system/resume_evidence.json), screen recording: [`assignment5_interrupt_resume_edited.mp4`](https://github.com/Ken-Nag1234/assignment5-insight-pipeline/releases/download/submission-2026-10-13/assignment5_interrupt_resume_edited.mp4) ([release `submission-2026-10-13`](https://github.com/Ken-Nag1234/assignment5-insight-pipeline/releases/tag/submission-2026-10-13)) |
+| Golden-50 evaluation | [`evals/golden/`](evals/golden/): [per-case comparison](evals/golden/per_case.csv), [human labels](evals/golden/golden_50_human_labels.csv), [metrics](evals/golden/metrics.json), [disagreement patterns](evals/golden/disagreement_patterns.json) |
 | Final analysis | [`outputs/analysis/`](outputs/analysis/): [memo](outputs/analysis/memo.md), [recommendations](outputs/analysis/recommendations.json), ranking, trends, weighted comparison, [run manifest](outputs/analysis/run_manifest.json) |
 | Verification and injection results | [`evals/verification/`](evals/verification/), [`evals/injection/`](evals/injection/) |
 | Preliminary analysis (analysis_10000) | [`outputs/analysis_preview_10000/`](outputs/analysis_preview_10000/) |
@@ -38,12 +38,12 @@ language (classification, independent verification, issue naming, memo prose).
 | **Deliverable quality 2** – architecture, shared schema, provenance | [Architecture](#architecture), [`pipeline/labels.py`](pipeline/labels.py) (schema, prompts, `label_config`), row hashes via the provided `row_sha` | Done |
 | **Deliverable quality 3** – memo numbers linked to calculations and evidence | [`pipeline/insights.py`](pipeline/insights.py): code inserts every number from `ranking.csv`, claim IDs map to `claims.csv`, cited review IDs are checked | Done ([memo](outputs/analysis/memo.md), [claims](grading/claims.csv)) |
 | **Deliverable quality 4** – recommendation, alternatives, limitations | Memo sections are enforced by code (Recommendation, Evidence, Alternatives considered, Limitations) | Done |
-| **Testing 1** – 50 human labels, per-field comparison, error analysis | [`evals/golden/metrics.json`](evals/golden/metrics.json), [`evals/golden/disagreement_patterns.json`](evals/golden/disagreement_patterns.json), [`pipeline/golden_eval.py`](pipeline/golden_eval.py) | Done (measured) |
+| **Testing 1** – 50 human labels, per-field comparison, error analysis | [`evals/golden/per_case.csv`](evals/golden/per_case.csv) (expected labels, predictions, pass/fail, problems per case), [`evals/golden/golden_50_human_labels.csv`](evals/golden/golden_50_human_labels.csv), [`evals/golden/metrics.json`](evals/golden/metrics.json), [`evals/golden/disagreement_patterns.json`](evals/golden/disagreement_patterns.json), [`pipeline/golden_eval.py`](pipeline/golden_eval.py) | Done (measured) |
 | **Testing 2** – independent verification, planted-error and injection tests | [`pipeline/verify.py`](pipeline/verify.py) (blind re-label of a declared seeded sample, separate instructions), planted-error test copy, [`evals/injection_cases.csv`](evals/injection_cases.csv) | Done (measured; see [Verification](#independent-verification-and-injection-test)) |
 | **Testing 3** – real 100-review cold/warm pilot, calculator, retry/spend/recovery controls | [`pipeline/pilot.py`](pipeline/pilot.py), [`cost/`](cost/); controls: shared spend ledger with reservations, retries, network-outage recovery, supervisor, resume ([`tests/test_resilience.py`](tests/test_resilience.py)) | Done (measured pilot; see [Pilot](#measured-100-review-coldwarm-pilot)) |
 | **Working result 1** – full ingestion, coverage, classification | Ingestion: 660,622/660,622 accounted for; classification: 284,709 completed, 375,900 pending (budget), 13 quarantined | Done within the approved budget; coverage disclosed |
 | **Working result 2** – staged program, bounded calls, saved handoffs, resume | [`pipeline/run.py`](pipeline/run.py) runs all stages from an input CSV; 1 review per request; resume demonstrated ([evidence](evals/system/resume_evidence.json)) | Done |
-| **Working result 3** – reproducible ranking, deployed dashboard with AI recommendations | `python3 -m pipeline.rank` regenerates the ranking from saved files; [`dashboard/`](dashboard/) serves metrics, ranking, evidence reviews and AI recommendations from a database ([`pipeline/serving.py`](pipeline/serving.py), [`tests/test_dashboard.py`](tests/test_dashboard.py)) | Ranking done (regenerated byte-for-byte from `grading/`); dashboard built and tested on the final data locally; deployment pending |
+| **Working result 3** – reproducible ranking, deployed dashboard with AI recommendations | `python3 -m pipeline.rank` regenerates the ranking from saved files; [`dashboard/`](dashboard/) serves metrics, ranking, evidence reviews and AI recommendations from a database ([`pipeline/serving.py`](pipeline/serving.py), [`tests/test_dashboard.py`](tests/test_dashboard.py)) | Done: ranking regenerated byte-for-byte from `grading/`; [live dashboard](https://assignment5-insight-pipeline.vercel.app) serves the final data from Postgres |
 
 ## Results (measured)
 
@@ -155,6 +155,28 @@ recommendation praise labeled `catalog` instead of `usability`; generic update c
 `other`; short praise ("Great...") labeled `unclear`; severity 3 vs 4 boundary (±1). Fifty cases
 are a small diagnostic sample, not a precise accuracy estimate.
 
+**Per-case files.** [`evals/golden/per_case.csv`](evals/golden/per_case.csv) lists, for each of the
+50 reviews, the human expected labels (with accepted alternatives), the model predictions, per-field
+pass/fail, the model evidence quote with its exact-substring check, entities and the recorded
+problems. [`evals/golden/golden_50_human_labels.csv`](evals/golden/golden_50_human_labels.csv) is the
+complete human label set (all evaluation fields; the unused, empty `notes` column is omitted). Both
+files have the same 50 review IDs, and the accuracies above can be recounted from `per_case.csv`
+alone. One review consists of a short phrase followed by the reviewer's apparent signature; in both
+files that name is replaced with `[NAME REDACTED]` in the review text and in both evidence quotes
+(marked in the `redaction` column). Scores were computed on the original text, and `review_id` and
+`source_sha256` still identify the unredacted source row.
+
+**Which predictions were scored.** The golden evaluation scored a separate classification run of the
+50 golden texts in a dedicated evaluation database (`work/golden_eval.sqlite`) with the same model
+and settings as production (`typesafe-ai/jev+p1+s1+x1`); the metrics above belong to that run. The
+same 50 reviews were classified again in the production run, and the final records in
+[`grading/`](grading/) differ from the evaluation run for 2 of them:
+`292ce26a-815d-4bce-a3b6-93cb6c9e7e2c` (topic `other` → `catalog`) and
+`5de7f95b-ccad-41b2-9f63-a13f7c1d9f09` (intent `cancellation` → `unclear`, severity 2 → 1).
+Sentiment scores also differ slightly for 25 of the 50 (at most 0.055). Scoring the production labels
+with the same script gives topic 76% / 84%, intent 90% and severity 80%; this is a sensitivity
+check, not the reported result.
+
 ### Interruption and resume (recorded)
 
 On the full-corpus database: an initial run was interrupted with Ctrl+C, `checkpoint_before`
@@ -162,6 +184,20 @@ saved 2,438 completed IDs, a resumed run added 75 more (65 by new calls, 10 by c
 `checkpoint_after` saved 2,513. No resumed call re-sent any checkpointed ID; every checkpointed
 ID has an initial call or a direct cache source. These are the grader's own conditions
 ([evidence](evals/system/resume_evidence.json)).
+
+**Recording:** [`assignment5_interrupt_resume_edited.mp4`](https://github.com/Ken-Nag1234/assignment5-insight-pipeline/releases/download/submission-2026-10-13/assignment5_interrupt_resume_edited.mp4) ([release `submission-2026-10-13`](https://github.com/Ken-Nag1234/assignment5-insight-pipeline/releases/tag/submission-2026-10-13)) (2 min 48 s, terminal only, edited from the
+original screen recording to remove unrelated windows; no audio). It shows, in order:
+
+1. the interrupted run `enrich-20261011T075351Z` (phase `initial`) stopped with Ctrl+C,
+   `stop_reason: interrupted`, 2,438 completed;
+2. `checkpoint_before` saved with 2,438 IDs and a check that every ID has an initial call or a cache source;
+3. the resumed run `enrich-20261011T080045Z` (phase `resume`, same `label_config`) raising completed
+   records from 2,438 to 2,513 with 65 requests and 10 cache reuses;
+4. `checkpoint_after` saved with 2,513 IDs;
+5. the final check: 0 resume calls re-sent a checkpointed ID; 75 new IDs (65 via API, 10 via cache).
+
+The snapshots are [`outputs/checkpoints/checkpoint_before.json`](outputs/checkpoints/checkpoint_before.json) and
+[`checkpoint_after.json`](outputs/checkpoints/checkpoint_after.json) (identical copies in [`grading/`](grading/)).
 
 ### Final ranking (deterministic baseline, no model; 284,709 completed records)
 

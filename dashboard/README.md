@@ -54,9 +54,13 @@ completed reviews needs roughly 80-130 MB including indexes, well inside the Neo
 
 ## Deployment (Vercel + Neon Postgres)
 
-Status 2026-10-12: steps 1–3 done. The final serving tables are loaded in a dedicated Neon project
-(PostgreSQL 18, 117 MB; every table verified against the local serving database and `grading/`).
-Steps 4–5 (Vercel) are not done yet.
+Status 2026-10-12: all steps done. **Live dashboard: <https://assignment5-insight-pipeline.vercel.app>** (no login, no API key).
+The final serving tables are loaded in a dedicated Neon project (PostgreSQL 18, 117 MB; every table
+verified against the local serving database and `grading/`). The Vercel deployment (Root Directory
+`dashboard`) was checked signed out: the page and every `/api/*` endpoint return 200, `/api/health`
+reports `postgres` with 34 issues, 284,709 reviews, 92,035 memberships and 4 recommendations, the
+34-row ranking equals `outputs/analysis/ranking.csv`, and every recommendation's claim values equal
+`grading/claims.csv` with all cited reviews resolved.
 
 1. Create a Neon Postgres project (free plan) and copy two connection strings: the owner role
    (for loading) and, after step 3, a read-only role (for the app).

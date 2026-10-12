@@ -11,7 +11,7 @@ check has actually been run on the final outputs.
 | Account for all 660,622 source IDs; quarantine the 13 empty texts with `empty_review_text` (contract, scope) | `pipeline/ingest.py`; `outputs/ingestion/` | Done |
 | Classify every nonempty review (660,609) | `pipeline/enrich.py`; cumulative classification cap $4.00 approved | **Partial by budget**: all 192,342 duplicated-text reviews plus 92,367 seeded singletons; pending reviews are reported, never relabeled; shares stratum-weighted |
 | At most 50 reviews per enrichment request; validate returned IDs; save after each batch | 1 review per request; ID validation; one transaction per response | Done |
-| Interruption and resume with no re-sent completed IDs; recording + two snapshots | `outputs/checkpoints/`, `evals/system/resume_evidence.json` (checker rules pass) | Done; **recording link: approval** (where to host the video) |
+| Interruption and resume with no re-sent completed IDs; recording + two snapshots | `outputs/checkpoints/`, `evals/system/resume_evidence.json` (checker rules pass) | Done; recording published as a [GitHub Release asset](https://github.com/Ken-Nag1234/assignment5-insight-pipeline/releases/tag/submission-2026-10-13) (2 min 48 s, terminal only) |
 | Program accepts an input CSV and runs ingest → enrich → verify → group → rank → recommend | `pipeline/run.py` (mock-tested end to end) | Done; real run is the pilot |
 | Distinct model roles with saved inputs/outputs | enrich (Jev), verify (Jev, separate instructions), group naming and memo (GPT-6 Luna) | Done: verify 500; naming + memo with `openai/gpt-6-luna` (2026-10-12, $0.0037) |
 | Common labels, intent precedence, severity scale, `needs_review`; written examples of applying them | `pipeline/labels.py`, `docs/GOLDEN_LABELING_GUIDE.md` | Done |
@@ -25,9 +25,9 @@ check has actually been run on the final outputs.
 | Stable run ID and a manifest tying checksum, code version, prompts, models, settings, outputs | `run_manifest.json` written by `finalize export` | Done (offline-tested) |
 | Cost calculator: real cold/warm 100-review pilot, dated rates, offline replay, scenarios | `cost/`, `pipeline/pilot.py` | Done: measured pilot 2026-10-12 (cold 76.1 s, warm 0 new calls, $0.0059) |
 | Independent verification, planted-error and injection tests | `pipeline/verify.py`, `evals/injection_cases.csv` | Done: agreement topic 95.2% / intent 96.4% / severity 91.8%; planted 10/10; injection 8/8 schema-valid, 2/8 topic steered |
-| Deployed dashboard + backend + database; overall metrics, ranking, AI recommendations with evidence | `dashboard/`, `pipeline/serving.py` (SQLite locally, Postgres when deployed) | Built and tested locally; **deployment: approval** (accounts, package install, push) |
-| README: results summary, architecture with DB/backend/dashboard, one real review traced, a failed/ambiguous case, golden comparison, trend with denominators, memo, limitations | README sections; `pipeline/trace.py`, `pipeline/trends.py` | Done except dashboard URL and recording link |
-| Complete golden comparison "expected labels, model predictions, error analysis" (README evidence list) | Aggregates and disagreement patterns published; per-case file only with `--publish-golden` | **Approval**: publishing per-review human labels is currently not allowed |
+| Deployed dashboard + backend + database; overall metrics, ranking, AI recommendations with evidence | `dashboard/`, `pipeline/serving.py` (SQLite locally, Postgres when deployed) | Done: deployed at <https://assignment5-insight-pipeline.vercel.app> (Vercel + Neon Postgres, read-only role); verified signed out 2026-10-12 |
+| README: results summary, architecture with DB/backend/dashboard, one real review traced, a failed/ambiguous case, golden comparison, trend with denominators, memo, limitations | README sections; `pipeline/trace.py`, `pipeline/trends.py` | Done (dashboard URL and recording link added) |
+| Complete golden comparison "expected labels, model predictions, error analysis" (README evidence list) | `evals/golden/per_case.csv`, `evals/golden/golden_50_human_labels.csv`, metrics and disagreement patterns | Done 2026-10-12 (one reviewer signature redacted; evaluation run vs. production difference disclosed in the README) |
 | `.env` absent from tracked files and history; blank `.env.example` | Audit 2026-10-11: no key in tracked/untracked publishable files or git history | Done; re-run before push |
 | Raw dataset not committed; source link and checksums in README | `.gitignore`, README Setup | Done |
 
@@ -54,7 +54,7 @@ check has actually been run on the final outputs.
 - [x] `python3 -m pipeline.rank --records grading/records.jsonl.gz --membership grading/membership.csv --out /tmp/rank` reproduces `ranking.csv` byte for byte.
 
 ### evals/
-- [x] `golden/metrics.json`, `golden/disagreement_patterns.json` (aggregates only unless publication is approved).
+- [x] `golden/metrics.json`, `golden/disagreement_patterns.json`, `golden/per_case.csv`, `golden/golden_50_human_labels.csv` (50 matching IDs; accuracies recount from `per_case.csv`).
 - [x] `verification/report.json`, `report.md`, `disagreements.csv`, `planted_report.json`, `sample.json`.
 - [x] `injection/injection_report.json` (synthetic cases) and `system/resume_evidence.json` with `checks_pass: true`.
 
@@ -71,15 +71,16 @@ check has actually been run on the final outputs.
 - [ ] Measured vs. estimated separated; completed vs. accounted-for rows separated.
 - [x] Coverage: completed / pending / quarantined counts and the stratum-weighted sensitivity result.
 - [x] One traced review and one failed/ambiguous case; trend with denominators.
-- [ ] Live dashboard URL and access instructions (no login); recording link; evidence links open signed out.
+- [x] Live dashboard URL and access instructions (no login) and the recording link are in the README.
+- [ ] Evidence links (repository files, release video) open signed out — possible only after the repository is public.
 
 ### Dashboard
-- [ ] URL loads signed out; `/api/health` reports `postgres` and nonzero rows.
-- [ ] Ranking on the page equals `outputs/analysis/ranking.csv`; recommendations show claim values and cited reviews.
+- [x] URL loads signed out; `/api/health` reports `postgres` and nonzero rows.
+- [x] Ranking on the page equals `outputs/analysis/ranking.csv`; recommendations show claim values and cited reviews.
 - [ ] No API key in the deployment; the database role used by the app can only read (role `dashboard_reader` created and verified 2026-10-12; check that Vercel uses it).
 
 ### Publishing safety (re-run immediately before any push)
-- [ ] `git status` / `git ls-files -co --exclude-standard` reviewed; no `.env`, databases, raw CSVs, `golden/` files, `work/`.
-- [ ] Secret scan of publishable files and `git log -p` for the gateway key prefix and connection strings.
-- [ ] No file > 50 MB (GitHub warns at 50 MB and rejects files over 100 MB); large exports gzip-compressed.
-- [ ] No golden review IDs with human labels in any publishable file (unless publication is approved).
+- [x] `git status` / `git ls-files -co --exclude-standard` reviewed; no `.env`, databases, raw CSVs, `golden/` files, `work/` (pre-push review 2026-10-12).
+- [x] Secret scan of publishable files (including inside `.gz`) and every blob in Git history for the gateway key and connection strings (2026-10-12: no hits).
+- [x] No file > 50 MB (GitHub warns at 50 MB and rejects files over 100 MB); large exports gzip-compressed (largest 28.5 MB).
+- [x] No golden review IDs with human labels in any publishable file (unless publication is approved) — publication approved 2026-10-12; only `evals/golden/` carries them, with one reviewer signature redacted.
