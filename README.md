@@ -102,6 +102,74 @@ known inclusion rates, so population-level shares are re-weighted by stratum (we
 duplicated texts, 5.07 for single texts); the baseline ranking is unchanged and its stratum-weighted
 version agrees closely (Spearman 0.999, same top 10).
 
+### Selection check: classified vs. pending reviews
+
+Only 284,709 of the 660,609 nonempty reviews (43.1%) are classified. Measured on the full database
+(read-only audit, 2026-10-12):
+
+**Why the classified subset is skewed.** The run classified every review whose exact text occurs
+more than once, and these repeated texts are mostly short, generic and positive (median 9
+characters, 63.1% five-star). The classified set therefore over-represents short, high-rated,
+low-engagement reviews compared with all nonempty reviews:
+
+| Group | Reviews | Median length (chars) | 5-star | 1-star | With ≥1 like |
+|---|---|---|---|---|---|
+| All nonempty | 660,609 | 32 | 45.3% | 36.7% | 8.3% |
+| Classified | 284,709 | 12 | 55.1% | 31.4% | 4.8% |
+| Pending | 375,900 | 58 | 37.9% | 40.8% | 11.0% |
+
+**Two strata, and comparability inside the sampled one.** Classification covered two strata:
+duplicated texts (192,342 reviews, 100% classified) and single-occurrence texts (468,267 reviews,
+92,367 classified = 19.7%, in a seeded order). All 375,900 pending reviews are single-occurrence
+texts. Within that stratum, the classified sample and the pending reviews are closely comparable on
+every attribute checked:
+
+| Single-occurrence texts | Reviews | Mean length | Median length | Mean stars | 5-star | With ≥1 like | Missing app version |
+|---|---|---|---|---|---|---|---|
+| Classified | 92,367 | 101.1 | 58 | 2.99 | 38.5% | 10.8% | 21.9% |
+| Pending | 375,900 | 101.5 | 58 | 2.97 | 37.9% | 11.0% | 22.0% |
+
+Coverage of single-occurrence texts is 19.1–20.6% in every calendar month, 19.3–20.0% for every
+star rating and 19.7–20.7% for the main app versions (8.4–8.8 and missing).
+
+**Weighting and its assumptions.** Population-level shares re-weight each stratum to its size
+(weight 1.0 for duplicated texts, 5.07 for single-occurrence texts;
+[`pipeline/weighted.py`](pipeline/weighted.py), [`weighted_comparison.json`](outputs/analysis/weighted_comparison.json)).
+This assumes the classified single-occurrence reviews are representative of the pending ones. The
+checks above support that for length, rating, likes, month and app version, but they cannot rule out
+differences in attributes that were not measured, so some residual bias may remain. Weighting
+corrects for the known stratum imbalance; it does not make the subset equivalent to classifying all
+reviews.
+
+**Issue rankings vs. topic distributions.** The issue-level baseline ranking is stable under
+weighting: Spearman rank correlation 0.999, the same top 10, and only two adjacent swaps (ranks 8/9
+`access.login` / `usability.playlist`, and ranks 21/22). Topic-level distributions are less stable,
+because the catch-all `other.general` draws heavily on short repeated texts (weighting factor 1.91
+versus 3.5–5.1 for the other top-12 issues):
+
+| Topic | Complaint share, unweighted | Complaint share, weighted | Severity-sum share, unweighted | Severity-sum share, weighted |
+|---|---|---|---|---|
+| other | 52.5% | 31.4% | 43.9% | 24.3% |
+| usability | 19.7% | 26.3% | 20.4% | 25.8% |
+| billing | 11.3% | 17.3% | 13.0% | 18.4% |
+| playback | 9.2% | 14.1% | 12.9% | 18.0% |
+| catalog | 3.1% | 4.8% | 3.6% | 5.1% |
+| access | 2.4% | 3.5% | 3.8% | 5.1% |
+| downloads | 1.5% | 2.4% | 2.2% | 3.0% |
+| support | 0.2% | 0.3% | 0.2% | 0.3% |
+
+By weighted complaint share, the `other` catch-all is still the largest topic (31.4%), with
+usability second (26.3%); the gap narrows from 52.5% vs. 19.7% unweighted. By weighted severity sum,
+the measure the baseline ranking uses, usability (25.8%) ranks slightly ahead of `other` (24.3%);
+unweighted, `other` leads on both measures. Among named product areas, usability is first on every
+measure shown.
+
+**Counts are counts among classified records.** Issue and topic counts and severity sums in
+[`ranking.csv`](grading/ranking.csv), the [memo](outputs/analysis/memo.md) and the dashboard refer to
+the 284,709 classified records, not to all 660,609 nonempty reviews; the topic totals quoted in the
+memo are unweighted. They should be read as relative evidence within the classified set, not as
+population totals.
+
 ### Independent verification and injection test
 
 A second Jev task with separately written instructions re-labeled a declared seeded sample of 500
