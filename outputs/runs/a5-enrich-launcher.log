@@ -1,0 +1,9 @@
+[2026-10-11T17:21:52Z] launcher started pid=17273
+[supervisor 2026-10-11T17:21:52] supervisor_started {"caffeinate": true, "command": ["/Library/Frameworks/Python.framework/Versions/3.13/bin/python3", "-m", "pipeline.enrich", "--db", "work/pipeline.sqlite", "--provider", "jev", "--budget-usd", "4.00", "--workers", "2", "--rps", "4", "--execute", "--out", "outputs/runs", "--stratum", "duplicates"], "max_restarts": 10, "restart_delay_s": 600.0}
+[supervisor 2026-10-11T18:28:00] child_exited {"exit_code": 0, "reason": "finished", "seconds": 3968.0}
+[supervisor 2026-10-11T18:28:00] supervisor_finished {"last_exit_code": 0, "restarts": 0, "result": "finished"}
+[2026-10-11T18:28:00Z] duplicates supervisor exited code=0
+[supervisor 2026-10-11T18:28:01] supervisor_started {"caffeinate": true, "command": ["/Library/Frameworks/Python.framework/Versions/3.13/bin/python3", "-m", "pipeline.enrich", "--db", "work/pipeline.sqlite", "--provider", "jev", "--budget-usd", "4.00", "--workers", "2", "--rps", "4", "--execute", "--out", "outputs/runs", "--stratum", "singletons"], "max_restarts": 10, "restart_delay_s": 600.0}
+[supervisor 2026-10-12T01:06:06] child_exited {"exit_code": 4, "reason": "budget_cap", "seconds": 23884.2}
+[supervisor 2026-10-12T01:06:06] supervisor_finished {"last_exit_code": 4, "restarts": 0, "result": "budget_cap"}
+[2026-10-12T01:06:06Z] singletons supervisor exited code=4 (4 = budget cap reached, expected)

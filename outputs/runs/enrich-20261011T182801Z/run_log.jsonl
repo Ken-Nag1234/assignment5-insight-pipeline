@@ -1,0 +1,3 @@
+{"at": "2026-10-11T18:28:18.482850+00:00", "batches": 461119, "cache_reused": 0, "event": "queue_built", "groups": 461119, "run_id": "enrich-20261011T182801Z", "scope": {"limit": null, "max_requests": null, "requests_per_second": 4.0, "sample": null, "stratum": "singletons", "workers": 2}}
+{"at": "2026-10-12T01:06:02.264356+00:00", "cap": "4.00", "event": "budget_cap", "next_reservation": "0.000051744", "reserved": "0.000050652", "run_id": "enrich-20261011T182801Z", "spent": "3.999932412"}
+{"at": "2026-10-12T01:06:02.404196+00:00", "event": "run_finished", "requests": 85219, "run_id": "enrich-20261011T182801Z", "stop_reason": "budget_cap"}

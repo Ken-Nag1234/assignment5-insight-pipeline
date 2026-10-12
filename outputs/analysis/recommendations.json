@@ -1,0 +1,54 @@
+{
+  "created_at": "2026-10-12T03:44:02.706309+00:00",
+  "model": "openai/gpt-6-luna",
+  "note": "Generated in the same call as memo.md; numbers inserted by code; claim IDs refer to claims.csv.",
+  "prompt": "m4",
+  "recommendations": [
+    {
+      "body_md": "Prioritize investigation and fixes for playback failures and crashes, whose issue priority and crash severity support focused effort 23681 [C001] 3.757009 [C002]. Use examples such as skipping playback `e3315f54-d116-45c3-a2ab-02782fbfe9a8` and repeated crashes `56497e20-4dad-40fd-b3c6-a300b3d0a239` as leads, not as proxies for all reports.",
+      "claim_ids": [
+        "C001",
+        "C002"
+      ],
+      "review_ids": [
+        "e3315f54-d116-45c3-a2ab-02782fbfe9a8",
+        "56497e20-4dad-40fd-b3c6-a300b3d0a239"
+      ],
+      "title": "Make playback stability a focused quarterly objective"
+    },
+    {
+      "body_md": "Investigate whether Premium access loss, billing continuity, and feature expectations can be reduced through clearer states and reliable entitlement handling; the issue priority supports a dedicated workstream 18973 [C003]. A report of continued charges after Premium disappeared is one illustrative case `50456d9f-a97a-4f89-aa89-e90df29d68f0`.",
+      "claim_ids": [
+        "C003"
+      ],
+      "review_ids": [
+        "50456d9f-a97a-4f89-aa89-e90df29d68f0"
+      ],
+      "title": "Audit Premium entitlement and billing journeys"
+    },
+    {
+      "body_md": "Separate ad experience, playlist tasks, and post-update regressions into testable work, guided by their issue priorities 17525 [C004] 5456 [C005] 6492 [C006]. Samples include ad frustration `8b7ab125-8665-441c-a0a7-feb2abb5afcd` and playlist-creation difficulty `ca33cb8c-9d06-47b6-a50d-a50ed2a39828`.",
+      "claim_ids": [
+        "C004",
+        "C005",
+        "C006"
+      ],
+      "review_ids": [
+        "8b7ab125-8665-441c-a0a7-feb2abb5afcd",
+        "ca33cb8c-9d06-47b6-a50d-a50ed2a39828"
+      ],
+      "title": "Target usability regressions rather than a catch-all redesign"
+    },
+    {
+      "body_md": "Track and investigate login failure paths as a focused access concern: mean severity is high 3.971487 [C007], though the topic’s complaint volume is smaller than leading areas. Repeated phone-number login trouble is an example to investigate `6c167086-261a-4c55-9289-2d4727019db4`.",
+      "claim_ids": [
+        "C007"
+      ],
+      "review_ids": [
+        "6c167086-261a-4c55-9289-2d4727019db4"
+      ],
+      "title": "Monitor high-severity login failures"
+    }
+  ],
+  "synthetic": false
+}

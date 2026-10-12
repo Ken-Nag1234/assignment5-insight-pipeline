@@ -1,0 +1,289 @@
+{
+  "issues": [
+    {
+      "baseline_rank": 1,
+      "issue_id": "other.general",
+      "weighted_complaint_count": 92265.573,
+      "weighted_rank": 1,
+      "weighted_severity_sum": 190061.225
+    },
+    {
+      "baseline_rank": 2,
+      "issue_id": "playback.general",
+      "weighted_complaint_count": 34060.91,
+      "weighted_rank": 2,
+      "weighted_severity_sum": 116501.241
+    },
+    {
+      "baseline_rank": 3,
+      "issue_id": "billing.premium",
+      "weighted_complaint_count": 32834.287,
+      "weighted_rank": 3,
+      "weighted_severity_sum": 94908.324
+    },
+    {
+      "baseline_rank": 4,
+      "issue_id": "usability.ads",
+      "weighted_complaint_count": 28292.758,
+      "weighted_rank": 4,
+      "weighted_severity_sum": 64606.61
+    },
+    {
+      "baseline_rank": 5,
+      "issue_id": "usability.general",
+      "weighted_complaint_count": 20686.756,
+      "weighted_rank": 5,
+      "weighted_severity_sum": 53881.093
+    },
+    {
+      "baseline_rank": 6,
+      "issue_id": "billing.general",
+      "weighted_complaint_count": 13939.199,
+      "weighted_rank": 6,
+      "weighted_severity_sum": 37860.301
+    },
+    {
+      "baseline_rank": 7,
+      "issue_id": "usability.update",
+      "weighted_complaint_count": 11026.387,
+      "weighted_rank": 7,
+      "weighted_severity_sum": 32851.028
+    },
+    {
+      "baseline_rank": 9,
+      "issue_id": "usability.playlist",
+      "weighted_complaint_count": 9421.382,
+      "weighted_rank": 8,
+      "weighted_severity_sum": 27627.373
+    },
+    {
+      "baseline_rank": 8,
+      "issue_id": "access.login",
+      "weighted_complaint_count": 6588.532,
+      "weighted_rank": 9,
+      "weighted_severity_sum": 26141.201
+    },
+    {
+      "baseline_rank": 10,
+      "issue_id": "catalog.general",
+      "weighted_complaint_count": 7262.091,
+      "weighted_rank": 10,
+      "weighted_severity_sum": 19894.16
+    },
+    {
+      "baseline_rank": 11,
+      "issue_id": "downloads.downloads",
+      "weighted_complaint_count": 4142.196,
+      "weighted_rank": 11,
+      "weighted_severity_sum": 14010.826
+    },
+    {
+      "baseline_rank": 12,
+      "issue_id": "playback.crash",
+      "weighted_complaint_count": 3467.516,
+      "weighted_rank": 12,
+      "weighted_severity_sum": 12947.392
+    },
+    {
+      "baseline_rank": 13,
+      "issue_id": "catalog.lyrics",
+      "weighted_complaint_count": 4285.867,
+      "weighted_rank": 13,
+      "weighted_severity_sum": 12378.055
+    },
+    {
+      "baseline_rank": 14,
+      "issue_id": "usability.shuffle",
+      "weighted_complaint_count": 4053.569,
+      "weighted_rank": 14,
+      "weighted_severity_sum": 11439.888
+    },
+    {
+      "baseline_rank": 15,
+      "issue_id": "billing.subscription",
+      "weighted_complaint_count": 2898.762,
+      "weighted_rank": 15,
+      "weighted_severity_sum": 8492.569
+    },
+    {
+      "baseline_rank": 16,
+      "issue_id": "usability.skip",
+      "weighted_complaint_count": 2808.578,
+      "weighted_rank": 16,
+      "weighted_severity_sum": 8238.157
+    },
+    {
+      "baseline_rank": 17,
+      "issue_id": "access.general",
+      "weighted_complaint_count": 1915.183,
+      "weighted_rank": 17,
+      "weighted_severity_sum": 7119.35
+    },
+    {
+      "baseline_rank": 18,
+      "issue_id": "access.account",
+      "weighted_complaint_count": 1730.746,
+      "weighted_rank": 18,
+      "weighted_severity_sum": 6715.127
+    },
+    {
+      "baseline_rank": 19,
+      "issue_id": "downloads.general",
+      "weighted_complaint_count": 1473.125,
+      "weighted_rank": 19,
+      "weighted_severity_sum": 4880.571
+    },
+    {
+      "baseline_rank": 20,
+      "issue_id": "playback.buffering",
+      "weighted_complaint_count": 1336.105,
+      "weighted_rank": 20,
+      "weighted_severity_sum": 4091.639
+    },
+    {
+      "baseline_rank": 22,
+      "issue_id": "catalog.search",
+      "weighted_complaint_count": 1247.13,
+      "weighted_rank": 21,
+      "weighted_severity_sum": 4015.151
+    },
+    {
+      "baseline_rank": 21,
+      "issue_id": "downloads.offline_mode",
+      "weighted_complaint_count": 1159.877,
+      "weighted_rank": 22,
+      "weighted_severity_sum": 3993.664
+    },
+    {
+      "baseline_rank": 23,
+      "issue_id": "billing.price",
+      "weighted_complaint_count": 1330.991,
+      "weighted_rank": 23,
+      "weighted_severity_sum": 2976.299
+    },
+    {
+      "baseline_rank": 24,
+      "issue_id": "playback.bluetooth",
+      "weighted_complaint_count": 826.351,
+      "weighted_rank": 24,
+      "weighted_severity_sum": 2656.489
+    },
+    {
+      "baseline_rank": 25,
+      "issue_id": "playback.car",
+      "weighted_complaint_count": 785.793,
+      "weighted_rank": 25,
+      "weighted_severity_sum": 2641.28
+    },
+    {
+      "baseline_rank": 26,
+      "issue_id": "usability.queue",
+      "weighted_complaint_count": 851.699,
+      "weighted_rank": 26,
+      "weighted_severity_sum": 2626.071
+    },
+    {
+      "baseline_rank": 27,
+      "issue_id": "catalog.recommendations",
+      "weighted_complaint_count": 978.44,
+      "weighted_rank": 27,
+      "weighted_severity_sum": 2408.077
+    },
+    {
+      "baseline_rank": 28,
+      "issue_id": "support.general",
+      "weighted_complaint_count": 577.103,
+      "weighted_rank": 28,
+      "weighted_severity_sum": 1488.802
+    },
+    {
+      "baseline_rank": 29,
+      "issue_id": "playback.audio_quality",
+      "weighted_complaint_count": 480.406,
+      "weighted_rank": 29,
+      "weighted_severity_sum": 1160.529
+    },
+    {
+      "baseline_rank": 30,
+      "issue_id": "catalog.podcasts",
+      "weighted_complaint_count": 385.292,
+      "weighted_rank": 30,
+      "weighted_severity_sum": 1084.902
+    },
+    {
+      "baseline_rank": 31,
+      "issue_id": "playback.battery",
+      "weighted_complaint_count": 365.014,
+      "weighted_rank": 31,
+      "weighted_severity_sum": 1059.554
+    },
+    {
+      "baseline_rank": 32,
+      "issue_id": "support.customer_support",
+      "weighted_complaint_count": 223.064,
+      "weighted_rank": 32,
+      "weighted_severity_sum": 557.66
+    },
+    {
+      "baseline_rank": 33,
+      "issue_id": "downloads.storage",
+      "weighted_complaint_count": 177.437,
+      "weighted_rank": 33,
+      "weighted_severity_sum": 542.451
+    },
+    {
+      "baseline_rank": 34,
+      "issue_id": "usability.widget",
+      "weighted_complaint_count": 116.602,
+      "weighted_rank": 34,
+      "weighted_severity_sum": 329.526
+    }
+  ],
+  "memberships_without_weight": 0,
+  "method": "Stratum weights = nonempty reviews / completed reviews within each exact-text stratum (duplicated text vs. text occurring once); weighted rank orders issues by weighted severity sum, then issue_id. The baseline ranking is unchanged.",
+  "scope": "full corpus",
+  "spearman_rank_correlation": 0.999389,
+  "strata": {
+    "duplicates": {
+      "completed_reviews": 192342,
+      "nonempty_reviews": 192342,
+      "weight": 1.0
+    },
+    "singletons": {
+      "completed_reviews": 92367,
+      "nonempty_reviews": 468267,
+      "weight": 5.069635
+    }
+  },
+  "top10_overlap": 10,
+  "top_changes": [
+    {
+      "baseline_rank": 9,
+      "issue_id": "usability.playlist",
+      "weighted_complaint_count": 9421.382,
+      "weighted_rank": 8,
+      "weighted_severity_sum": 27627.373
+    },
+    {
+      "baseline_rank": 8,
+      "issue_id": "access.login",
+      "weighted_complaint_count": 6588.532,
+      "weighted_rank": 9,
+      "weighted_severity_sum": 26141.201
+    },
+    {
+      "baseline_rank": 22,
+      "issue_id": "catalog.search",
+      "weighted_complaint_count": 1247.13,
+      "weighted_rank": 21,
+      "weighted_severity_sum": 4015.151
+    },
+    {
+      "baseline_rank": 21,
+      "issue_id": "downloads.offline_mode",
+      "weighted_complaint_count": 1159.877,
+      "weighted_rank": 22,
+      "weighted_severity_sum": 3993.664
+    }
+  ]
+}

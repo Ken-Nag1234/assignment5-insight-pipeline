@@ -1,0 +1,9 @@
+{
+  "key": "caded71e61f2025a4344747973bdda9c319150bc6f84137118a4bd68ebfcd811",
+  "label_config": "openai/gpt-6-luna+smoke",
+  "model": "openai/gpt-6-luna",
+  "request_id": "gen_01M4PTDHCQ25YV6QTHQQPYDBDT",
+  "role": "smoke",
+  "saved_at": "2026-10-12T01:07:48.180561+00:00",
+  "text": "{\"ok\": true}"
+}

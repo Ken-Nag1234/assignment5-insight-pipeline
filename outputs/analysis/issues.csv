@@ -1,0 +1,35 @@
+issue_id,topic,subtopic,name,members,grouping_version
+access.account,access,account,Access: account,343,g1
+access.general,access,general,Access: general,385,g1
+access.login,access,login,Access: login,1473,g1
+billing.general,billing,general,Billing: general,2882,g1
+billing.premium,billing,premium,Billing: premium,6577,g1
+billing.price,billing,price,Billing: price,338,g1
+billing.subscription,billing,subscription,Billing: subscription,575,g1
+catalog.general,catalog,general,Catalog: general,1471,g1
+catalog.lyrics,catalog,lyrics,Catalog: lyrics,904,g1
+catalog.podcasts,catalog,podcasts,Catalog: podcasts,76,g1
+catalog.recommendations,catalog,recommendations,Catalog: recommendations,193,g1
+catalog.search,catalog,search,Catalog: search,246,g1
+downloads.downloads,downloads,downloads,Downloads: downloads,858,g1
+downloads.general,downloads,general,Downloads: general,297,g1
+downloads.offline_mode,downloads,offline mode,Downloads: offline mode,232,g1
+downloads.storage,downloads,storage,Downloads: storage,35,g1
+other.general,other,general,Other: general,48342,g1
+playback.audio_quality,playback,audio quality,Playback: audio quality,106,g1
+playback.battery,playback,battery,Playback: battery,72,g1
+playback.bluetooth,playback,bluetooth,Playback: bluetooth,163,g1
+playback.buffering,playback,buffering,Playback: buffering,278,g1
+playback.car,playback,car,Playback: car,155,g1
+playback.crash,playback,crash,Playback: crash,749,g1
+playback.general,playback,general,Playback: general,6949,g1
+support.customer_support,support,customer support,Support: customer support,44,g1
+support.general,support,general,Support: general,162,g1
+usability.ads,usability,ads,Usability: ads,7969,g1
+usability.general,usability,general,Usability: general,4571,g1
+usability.playlist,usability,playlist,Usability: playlist,1860,g1
+usability.queue,usability,queue,Usability: queue,168,g1
+usability.shuffle,usability,shuffle,Usability: shuffle,806,g1
+usability.skip,usability,skip,Usability: skip,554,g1
+usability.update,usability,update,Usability: update,2179,g1
+usability.widget,usability,widget,Usability: widget,23,g1

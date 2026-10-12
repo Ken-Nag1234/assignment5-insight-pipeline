@@ -1,0 +1,79 @@
+{
+  "code": {
+    "code_sha256": "469704c9c037d04cf840e76aaaf055355fe3143b336ce06c17a6467821f63175",
+    "git_head": "d87472a0059be6e0d228228ffddc7d39448fa4f7"
+  },
+  "created_at": "2026-10-12T03:45:30+00:00",
+  "enrichment_run_ids": [
+    "enrich-20261011T064357Z",
+    "enrich-20261011T074332Z",
+    "enrich-20261011T075351Z",
+    "enrich-20261011T080045Z",
+    "enrich-20261011T081346Z",
+    "enrich-20261011T172153Z",
+    "enrich-20261011T182801Z"
+  ],
+  "label_configs": {
+    "typesafe-ai/jev+p1+s1+x1": 284709
+  },
+  "models": {
+    "enrich_and_verify": [
+      "typesafe-ai/jev"
+    ],
+    "text": [
+      "openai/gpt-6-luna"
+    ]
+  },
+  "outputs_sha256": {
+    "analysis/aggregates.csv": "658616cb722fba27acbab7ca2862c253c07c44e3e5421864e0a7659927371d37",
+    "analysis/claims_selection.json": "47d796c47fc85a29a2281b7282ab5477d04bd01c82c1c6f05926619e4f35fb1b",
+    "analysis/golden_report.json": "bab1ab594f5ff6de9d7352e3a80aa448ad1a4e884a23ffb1b5e4ec2eecfe0c66",
+    "analysis/issue_names.json": "d24f45af6b7763d339d035072d0e641e32ec638f986d1fb59d5bc1c947527c19",
+    "analysis/issues.csv": "0591a6a0a834b872cd3a31bcf204e8e2dd0cf70840804676d697c5a95045d930",
+    "analysis/membership.csv": "bfda2e39010288c4eb0068495c7591f4ee75888b94b7a46197da9f63e349c685",
+    "analysis/memo.md": "a344163bf9daaec9fbdb4dc2882d9385a57d716f7a7a23fbc2dd9ff1cc51d60d",
+    "analysis/memo_report.json": "f5e95d6d549a0a0e93d1dbf3c9b42a58461b828bdc2b2967ec48d6379865184d",
+    "analysis/model_calls.jsonl": "025690512eb92d027b6540ba2782bd2a71e618c03786e88fe415bbbc8b1ce87c",
+    "analysis/naming_report.json": "cf26a91c55ac1a8ba819bac23a1999f5ebbfb04a49e675aee5614552844600de",
+    "analysis/ranking.csv": "d2a95d5b9f729b73e038c8705b705b1e40cd00ae4bcb3b51682498b0fab41567",
+    "analysis/recommendations.json": "26896dd172ce67c296deb546e1ddd4dec5d85482667040280b3c3193cb167184",
+    "analysis/trends.csv": "a6ed5eac5ade3cba28a0ff71bee068ff0c6577269cc6689124e01d857fca00a9",
+    "analysis/trends.json": "84b4bb591b8620520e74f22d8a155e27407fafb32ce7b4f41c611d572e90f01c",
+    "analysis/verify_report.json": "3ecd5dc83e08a74c2182def052aaf363ef5d8d99f581f6c0c71b02001e55e6ff",
+    "analysis/weighted_comparison.json": "ed144b06fe984410c09d870c095fecce17e38f7a80437cb5a3d1c2f3adaaca0a",
+    "grading/calls.jsonl.gz": "b8516fc77b11fa7cefefc8ac70068a28418384420e60fe3aacc41ddc16400bfe",
+    "grading/checkpoint_after.json": "9bc760e013bb0439945cd6c04ad69653310aa6d37f3b5dc46ada91f888372383",
+    "grading/checkpoint_before.json": "2c1d67f0551d0267fadd1c48fecb8c62c8c5539b61a5f93e749a81a58561d5ef",
+    "grading/claims.csv": "0acd424d3aafb4644e4782d7dd94252ef665ead1f1222f13031f2a74dd6c97d8",
+    "grading/ingestion.json": "5512dd793b0bde3bd51f28b20b440108f3c9bab31233819bea5f32ce19482153",
+    "grading/membership.csv": "bfda2e39010288c4eb0068495c7591f4ee75888b94b7a46197da9f63e349c685",
+    "grading/ranking.csv": "d2a95d5b9f729b73e038c8705b705b1e40cd00ae4bcb3b51682498b0fab41567",
+    "grading/records.jsonl.gz": "d9a43203556fd50baa2de4359cefe9fdb092cdf15e53c6da1681ee9cc03938a3",
+    "grading/run.json": "09bf8e059a1517c9fd5d01d2ab9f43731b5c8f0f9d51da89daa40288a574645e"
+  },
+  "prompts": {
+    "enrich": "p1",
+    "extraction": "x1",
+    "grouping": "g1",
+    "memo": "m4",
+    "naming": "n2",
+    "schema": "s1",
+    "verify": "v1"
+  },
+  "run_id": "final-20261012T011520Z",
+  "settings": {
+    "enrich": "1 review per request, exact-text cache, shared cumulative spend cap",
+    "text": [
+      "openai/gpt-6-luna+group-n1",
+      "openai/gpt-6-luna+group-n2",
+      "openai/gpt-6-luna+memo-m3",
+      "openai/gpt-6-luna+memo-m4"
+    ]
+  },
+  "source": {
+    "ingest_code_version": "ingest-v1",
+    "source_bytes": "97400616",
+    "source_name": "spotify_reviews_18months.csv",
+    "source_sha256": "1fc85de68a304dd8978b537cfa58793d5f41cbaf417fa32cb53899f83a2fcef6"
+  }
+}

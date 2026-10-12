@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spotify Review Insights</title>
+<style>
+  :root { --bg:#f7f7f5; --card:#fff; --ink:#1d1d1f; --muted:#6b6b70; --line:#e2e2e0; --accent:#1a7f4b; --warn:#a15c00; --bar:#1a7f4b; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --bg:#121214; --card:#1c1c1f; --ink:#ececee; --muted:#9a9aa1; --line:#2c2c30; --accent:#4cc38a; --warn:#f0a43a; --bar:#4cc38a; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+  header, main { max-width:1100px; margin:0 auto; padding:16px; }
+  header h1 { margin:8px 0 4px; font-size:24px; }
+  .muted { color:var(--muted); font-size:13px; }
+  .banner { border:1px solid var(--warn); color:var(--warn); padding:8px 12px; border-radius:8px; margin:8px 0; font-size:14px; }
+  section { margin:20px 0; }
+  h2 { font-size:18px; margin:0 0 10px; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fill, minmax(190px, 1fr)); gap:10px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:12px; }
+  .card .v { font-size:22px; font-weight:600; font-variant-numeric:tabular-nums; }
+  .card .l { color:var(--muted); font-size:13px; }
+  .grid2 { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:10px; }
+  .bars div.row { display:grid; grid-template-columns:120px 1fr 110px; gap:8px; align-items:center; font-size:13px; margin:3px 0; }
+  .bars .track { background:var(--line); border-radius:4px; height:10px; overflow:hidden; }
+  .bars .fill { background:var(--bar); height:100%; }
+  .num { text-align:right; font-variant-numeric:tabular-nums; }
+  .table-wrap { overflow-x:auto; background:var(--card); border:1px solid var(--line); border-radius:10px; }
+  table { border-collapse:collapse; width:100%; font-size:14px; }
+  th, td { padding:7px 10px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
+  th { color:var(--muted); font-weight:500; font-size:12px; text-transform:uppercase; letter-spacing:.03em; }
+  tr.issue { cursor:pointer; }
+  tr.issue:hover, tr.issue.sel { background:color-mix(in srgb, var(--accent) 10%, transparent); }
+  .rec { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--accent); border-radius:10px; padding:12px 14px; margin-bottom:10px; }
+  .rec h3 { margin:0 0 6px; font-size:16px; }
+  .chip { display:inline-block; border:1px solid var(--line); border-radius:999px; padding:1px 8px; font-size:12px; margin:2px 4px 2px 0; }
+  code { font-size:12px; word-break:break-all; }
+  .quote { color:var(--muted); font-style:italic; }
+  button { background:var(--card); color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:5px 10px; cursor:pointer; }
+  #error { display:none; }
+  footer { max-width:1100px; margin:0 auto; padding:16px; color:var(--muted); font-size:12px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Spotify Review Insights</h1>
+  <div class="muted" id="provenance">Loading saved results from the database…</div>
+  <div class="banner" id="error"></div>
+  <div class="banner" id="scope-banner" style="display:none"></div>
+</header>
+<main>
+  <section>
+    <h2>Overall metrics</h2>
+    <div class="cards" id="metrics"></div>
+  </section>
+
+  <section>
+    <h2>AI-generated recommendations</h2>
+    <div class="muted" style="margin-bottom:8px">Written once by a language model from the saved aggregates; every number was inserted by code from the cited claim, and review IDs link to stored records. The dashboard never calls a model.</div>
+    <div id="recs"></div>
+  </section>
+
+  <section>
+    <h2>Label distributions (completed classifications)</h2>
+    <div class="grid2" id="breakdown"></div>
+  </section>
+
+  <section id="trend-section" style="display:none">
+    <h2>Complaint share by month</h2>
+    <div class="muted" id="trend-note" style="margin-bottom:8px"></div>
+    <div class="card bars" id="trends"></div>
+  </section>
+
+  <section>
+    <h2>Issue ranking (baseline)</h2>
+    <div class="muted" style="margin-bottom:8px">priority_score = severity_sum over complaint and cancellation records; ties broken by issue_id. Select an issue to see its evidence reviews.</div>
+    <div class="table-wrap"><table>
+      <thead><tr><th class="num">Rank</th><th>Issue</th><th class="num">Complaints</th><th class="num">Severity sum</th><th class="num">Mean severity</th><th class="num">Cancellations</th></tr></thead>
+      <tbody id="issues"></tbody>
+    </table></div>
+  </section>
+
+  <section id="detail-section" style="display:none">
+    <h2 id="detail-title"></h2>
+    <div class="muted" id="detail-sub"></div>
+    <div class="table-wrap" style="margin-top:8px"><table>
+      <thead><tr><th>Review ID</th><th class="num">Severity</th><th class="num">Rating</th><th>Intent</th><th>Evidence quote</th></tr></thead>
+      <tbody id="detail-rows"></tbody>
+    </table></div>
+    <div style="margin-top:8px"><button id="more">Show more</button></div>
+  </section>
+
+  <section id="weighted-section" style="display:none">
+    <h2>Sensitivity: stratum-weighted ranking</h2>
+    <div class="muted" id="weighted-note" style="margin-bottom:8px"></div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Issue</th><th class="num">Baseline rank</th><th class="num">Weighted rank</th><th class="num">Weighted complaints</th></tr></thead>
+      <tbody id="weighted"></tbody>
+    </table></div>
+  </section>
+</main>
+<footer id="footer"></footer>
+<script>
+const fmt = new Intl.NumberFormat("en-US");
+const el = (id) => document.getElementById(id);
+function esc(s) { return String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+async function get(path) {
+  const r = await fetch(path);
+  if (!r.ok) throw new Error(path + " returned " + r.status);
+  return r.json();
+}
+function pct(n, d) { return d ? (100 * n / d).toFixed(1) + "%" : ""; }
+
+function renderOverview(o) {
+  const m = o.meta;
+  el("provenance").textContent = `Scope: ${m.scope} · labels: ${m.label_configs} · served from the ${window.__dbkind || "database"} built ${m.built_at}`;
+  if (m.preliminary === "true" || m.recommendations_synthetic === "true") {
+    const parts = [];
+    if (m.preliminary === "true") parts.push("Preliminary preview on a fixed sample, not the final full-corpus run.");
+    if (m.recommendations_synthetic === "true") parts.push("Recommendations shown are SYNTHETIC test output from a mock model.");
+    el("scope-banner").textContent = parts.join(" ");
+    el("scope-banner").style.display = "block";
+  }
+  const byName = Object.fromEntries(o.metrics.map(x => [x.name, x]));
+  el("metrics").innerHTML = o.metrics.map(x => {
+    const d = x.denominator && byName[x.denominator] ? byName[x.denominator].value : null;
+    return `<div class="card"><div class="v">${fmt.format(x.value)}</div><div class="l">${esc(x.label)}${d ? ` · ${pct(x.value, d)} of ${esc(byName[x.denominator].label.toLowerCase())}` : ""}</div></div>`;
+  }).join("");
+  const order = ["topic", "intent", "severity", "sentiment"];
+  el("breakdown").innerHTML = order.filter(k => o.breakdown[k]).map(k => {
+    const rows = o.breakdown[k]; const total = rows.reduce((a, r) => a + r.n, 0); const max = Math.max(...rows.map(r => r.n));
+    if (k === "severity") rows.sort((a, b) => a.value.localeCompare(b.value));
+    const bands = ["very negative", "negative", "neutral or mixed", "positive", "very positive", "missing"];
+    if (k === "sentiment") rows.sort((a, b) => bands.indexOf(a.value) - bands.indexOf(b.value));
+    return `<div class="card bars"><div class="l" style="margin-bottom:6px">${k}</div>` + rows.map(r =>
+      `<div class="row"><span>${esc(r.value)}</span><div class="track"><div class="fill" style="width:${(100 * r.n / max).toFixed(1)}%"></div></div><span class="num">${pct(r.n, total)}</span></div>`).join("") + "</div>";
+  }).join("");
+  el("footer").textContent = `Serving schema ${m.serving_version}. Source analysis: ${m.analysis_dir}. ${m.weighting_note || ""}`;
+}
+
+function renderRecs(data) {
+  if (!data.recommendations.length) { el("recs").innerHTML = `<div class="card muted">No recommendations have been generated for this scope yet.</div>`; return; }
+  el("recs").innerHTML = data.recommendations.map(r => `
+    <div class="rec">
+      <h3>${r.position}. ${esc(r.title)}${r.synthetic ? " <span class='chip'>synthetic</span>" : ""}</h3>
+      <div>${esc(r.body_md).replace(/\n/g, "<br>")}</div>
+      <div style="margin-top:6px">${r.claims.map(c => `<span class="chip" title="${esc(c.issue_id)} ${esc(c.metric)}">${esc(c.claim_id)}: ${esc(c.issue_id)} ${esc(c.metric)} = ${esc(c.value)}</span>`).join("")}</div>
+      <div style="margin-top:4px">${r.reviews.map(v => `<div class="muted"><code>${esc(v.review_id)}</code> <span class="quote">“${esc(v.evidence_quote)}”</span></div>`).join("")}</div>
+      <div class="muted" style="margin-top:4px">Model: ${esc(r.model)}</div>
+    </div>`).join("");
+}
+
+let current = null, offset = 0;
+async function showIssue(issueId, append) {
+  if (!append) { current = issueId; offset = 0; el("detail-rows").innerHTML = ""; }
+  const d = await get(`/api/issues/${encodeURIComponent(issueId)}?limit=20&offset=${offset}`);
+  el("detail-section").style.display = "block";
+  el("detail-title").textContent = `${d.issue.name} (${d.issue.issue_id})`;
+  el("detail-sub").textContent = `Rank ${d.issue.rank} · ${fmt.format(d.issue.complaint_count)} records · severity sum ${fmt.format(d.issue.severity_sum)} · mean ${d.issue.mean_severity} · reviews ordered by ${d.order}`;
+  el("detail-rows").insertAdjacentHTML("beforeend", d.reviews.map(v =>
+    `<tr><td><code>${esc(v.review_id)}</code></td><td class="num">${v.severity}</td><td class="num">${v.rating ?? ""}</td><td>${esc(v.intent)}</td><td class="quote">“${esc(v.evidence_quote)}”</td></tr>`).join(""));
+  offset += d.reviews.length;
+  el("more").style.display = d.reviews.length < d.limit ? "none" : "inline-block";
+  document.querySelectorAll("tr.issue").forEach(tr => tr.classList.toggle("sel", tr.dataset.id === issueId));
+  if (!append) el("detail-section").scrollIntoView({behavior: "smooth"});
+}
+el("more").onclick = () => showIssue(current, true);
+
+function renderIssues(data) {
+  el("issues").innerHTML = data.issues.map(i =>
+    `<tr class="issue" data-id="${esc(i.issue_id)}"><td class="num">${i.rank}</td><td>${esc(i.name)}<div class="muted"><code>${esc(i.issue_id)}</code></div></td><td class="num">${fmt.format(i.complaint_count)}</td><td class="num">${fmt.format(i.priority_score)}</td><td class="num">${i.mean_severity}</td><td class="num">${i.cancellation_count ?? ""}</td></tr>`).join("");
+  document.querySelectorAll("tr.issue").forEach(tr => tr.onclick = () => showIssue(tr.dataset.id, false));
+}
+
+function renderWeighted(data, note) {
+  if (!data.issues.length) return;
+  el("weighted-section").style.display = "block";
+  el("weighted-note").textContent = note;
+  el("weighted").innerHTML = data.issues.slice(0, 15).map(w =>
+    `<tr><td>${esc(w.name || w.issue_id)}</td><td class="num">${w.baseline_rank}</td><td class="num">${w.weighted_rank}</td><td class="num">${fmt.format(Math.round(w.weighted_complaint_count))}</td></tr>`).join("");
+}
+
+function renderTrends(data, note) {
+  if (!data.months.length) return;
+  el("trend-section").style.display = "block";
+  el("trend-note").textContent = "Share = complaint or cancellation records / completed records in the month, re-weighted to each exact-text stratum's population when available (completed count shown). Partial months are marked *. " + (note || "");
+  el("trends").innerHTML = data.months.map(m => {
+    const share = m.weighted_complaint_share ?? m.complaint_share;
+    return `<div class="row"><span>${esc(m.month)}${m.partial_month ? " *" : ""}</span><div class="track"><div class="fill" style="width:${((share || 0) * 100).toFixed(1)}%"></div></div><span class="num">${share === null ? "" : (share * 100).toFixed(1) + "%"} <span class="muted">/ ${fmt.format(m.completed)}</span></span></div>`;
+  }).join("");
+}
+
+(async () => {
+  try {
+    const h = await get("/api/health"); window.__dbkind = h.database;
+    const [o, recs, iss, w, t] = await Promise.all([get("/api/overview"), get("/api/recommendations"), get("/api/issues?limit=100"), get("/api/weighted"), get("/api/trends")]);
+    renderOverview(o); renderRecs(recs); renderIssues(iss); renderWeighted(w, o.meta.weighting_note); renderTrends(t, o.meta.trend_note);
+  } catch (e) {
+    el("error").style.display = "block";
+    el("error").textContent = "Could not load data from the backend: " + e.message;
+  }
+})();
+</script>
+</body>
+</html>

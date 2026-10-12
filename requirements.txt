@@ -1,2 +1,5 @@
-# Phase 0-1 (ingestion and validation) uses only the Python standard library.
-# Requires Python >= 3.11. Third-party packages will be listed here when added.
+# The pipeline, tests, cost calculator and local dashboard use only the Python standard library.
+# Requires Python >= 3.11 (developed and tested with 3.13).
+#
+# Deployment only: the hosted dashboard backend and the one-time Postgres load use psycopg,
+# listed in dashboard/requirements.txt (installed by the hosting platform at build time).

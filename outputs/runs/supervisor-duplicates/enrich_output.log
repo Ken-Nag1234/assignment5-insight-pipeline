@@ -1,0 +1,167 @@
+
+===== 2026-10-11T17:21:52.856299+00:00 start: /Library/Frameworks/Python.framework/Versions/3.13/bin/python3 -m pipeline.enrich --db work/pipeline.sqlite --provider jev --budget-usd 4.00 --workers 2 --rps 4 --execute --out outputs/runs --stratum duplicates
+Run enrich-20261011T172153Z: progress in outputs/runs/enrich-20261011T172153Z/progress.jsonl and status.json
+[2026-10-11T17:22:37] running completed=122331 pending=70011 quarantined=0 requests=0 failed=0 spent_run=$0 ledger=$0.317064762 elapsed=43.5s
+[2026-10-11T17:23:08] running completed=124296 pending=68046 quarantined=0 requests=116 failed=0 spent_run=$0.004159554 ledger=$0.321224316 elapsed=74.6s
+[2026-10-11T17:23:39] running completed=125874 pending=66468 quarantined=0 requests=230 failed=0 spent_run=$0.008281224 ledger=$0.325345986 elapsed=105.7s
+[2026-10-11T17:24:10] running completed=127448 pending=64894 quarantined=0 requests=346 failed=0 spent_run=$0.012476016 ledger=$0.329540778 elapsed=136.7s
+[2026-10-11T17:24:41] running completed=128968 pending=63374 quarantined=0 requests=463 failed=0 spent_run=$0.016706340 ledger=$0.333771102 elapsed=167.6s
+[2026-10-11T17:25:12] running completed=130374 pending=61968 quarantined=0 requests=581 failed=0 spent_run=$0.020972910 ledger=$0.338037672 elapsed=198.6s
+[2026-10-11T17:25:43] running completed=131856 pending=60486 quarantined=0 requests=697 failed=0 spent_run=$0.025168920 ledger=$0.342233682 elapsed=229.6s
+[2026-10-11T17:26:14] running completed=133419 pending=58923 quarantined=0 requests=812 failed=0 spent_run=$0.029326500 ledger=$0.346391262 elapsed=260.4s
+[2026-10-11T17:26:45] running completed=134835 pending=57507 quarantined=0 requests=924 failed=0 spent_run=$0.033377610 ledger=$0.350442372 elapsed=291.3s
+[2026-10-11T17:27:16] running completed=136189 pending=56153 quarantined=0 requests=1042 failed=0 spent_run=$0.037644264 ledger=$0.354709026 elapsed=322.5s
+[2026-10-11T17:27:47] running completed=137466 pending=54876 quarantined=0 requests=1159 failed=0 spent_run=$0.041873706 ledger=$0.358938468 elapsed=353.5s
+[2026-10-11T17:28:18] running completed=138669 pending=53673 quarantined=0 requests=1278 failed=0 spent_run=$0.046177446 ledger=$0.363242208 elapsed=384.6s
+[2026-10-11T17:28:49] running completed=139943 pending=52399 quarantined=0 requests=1397 failed=0 spent_run=$0.050480892 ledger=$0.367545654 elapsed=415.5s
+[2026-10-11T17:29:20] running completed=140965 pending=51377 quarantined=0 requests=1516 failed=0 spent_run=$0.054782910 ledger=$0.371847672 elapsed=446.3s
+[2026-10-11T17:29:51] running completed=141861 pending=50481 quarantined=0 requests=1634 failed=0 spent_run=$0.059049774 ledger=$0.376114536 elapsed=477.3s
+[2026-10-11T17:30:22] running completed=142791 pending=49551 quarantined=0 requests=1752 failed=0 spent_run=$0.063316806 ledger=$0.380381568 elapsed=508.3s
+[2026-10-11T17:30:53] running completed=143965 pending=48377 quarantined=0 requests=1870 failed=0 spent_run=$0.067583460 ledger=$0.384648222 elapsed=539.4s
+[2026-10-11T17:31:24] running completed=144962 pending=47380 quarantined=0 requests=1986 failed=0 spent_run=$0.071776488 ledger=$0.388841250 elapsed=570.5s
+[2026-10-11T17:31:55] running completed=145828 pending=46514 quarantined=0 requests=2100 failed=0 spent_run=$0.075904836 ledger=$0.392969598 elapsed=601.5s
+[2026-10-11T17:32:26] running completed=146840 pending=45502 quarantined=0 requests=2216 failed=0 spent_run=$0.080099670 ledger=$0.397164432 elapsed=632.5s
+[2026-10-11T17:32:57] running completed=147606 pending=44736 quarantined=0 requests=2322 failed=0 spent_run=$0.083933262 ledger=$0.400998024 elapsed=663.5s
+[2026-10-11T17:33:28] running completed=148574 pending=43768 quarantined=0 requests=2437 failed=0 spent_run=$0.088090254 ledger=$0.405155016 elapsed=694.4s
+[2026-10-11T17:33:59] running completed=149220 pending=43122 quarantined=0 requests=2554 failed=0 spent_run=$0.092323182 ledger=$0.409387944 elapsed=725.4s
+[2026-10-11T17:34:30] running completed=150099 pending=42243 quarantined=0 requests=2670 failed=0 spent_run=$0.096517218 ledger=$0.413581980 elapsed=756.3s
+[2026-10-11T17:35:01] running completed=150815 pending=41527 quarantined=0 requests=2784 failed=0 spent_run=$0.100640484 ledger=$0.417705246 elapsed=787.3s
+[2026-10-11T17:35:32] running completed=151524 pending=40818 quarantined=0 requests=2899 failed=0 spent_run=$0.104801802 ledger=$0.421866564 elapsed=818.3s
+[2026-10-11T17:36:03] running completed=152334 pending=40008 quarantined=0 requests=3017 failed=0 spent_run=$0.109068792 ledger=$0.426133554 elapsed=849.2s
+[2026-10-11T17:36:34] running completed=153092 pending=39250 quarantined=0 requests=3136 failed=0 spent_run=$0.113371944 ledger=$0.430436706 elapsed=880.2s
+[2026-10-11T17:37:05] running completed=153691 pending=38651 quarantined=0 requests=3254 failed=0 spent_run=$0.117640908 ledger=$0.434705670 elapsed=911.2s
+[2026-10-11T17:37:36] running completed=154404 pending=37938 quarantined=0 requests=3372 failed=0 spent_run=$0.121907268 ledger=$0.438972030 elapsed=942.1s
+[2026-10-11T17:38:07] running completed=155014 pending=37328 quarantined=0 requests=3486 failed=0 spent_run=$0.126030408 ledger=$0.443095170 elapsed=973.0s
+[2026-10-11T17:38:38] running completed=155541 pending=36801 quarantined=0 requests=3601 failed=0 spent_run=$0.130188114 ledger=$0.447252876 elapsed=1004.1s
+[2026-10-11T17:39:09] running completed=156059 pending=36283 quarantined=0 requests=3693 failed=0 spent_run=$0.133515060 ledger=$0.450579822 elapsed=1035.3s
+[2026-10-11T17:39:40] running completed=156739 pending=35603 quarantined=0 requests=3808 failed=0 spent_run=$0.137672388 ledger=$0.454737150 elapsed=1066.2s
+[2026-10-11T17:40:11] running completed=157412 pending=34930 quarantined=0 requests=3927 failed=0 spent_run=$0.141975372 ledger=$0.459040134 elapsed=1097.3s
+[2026-10-11T17:40:42] running completed=157971 pending=34371 quarantined=0 requests=4033 failed=0 spent_run=$0.145808460 ledger=$0.462873222 elapsed=1128.2s
+[2026-10-11T17:41:13] running completed=158567 pending=33775 quarantined=0 requests=4151 failed=0 spent_run=$0.150076836 ledger=$0.467141598 elapsed=1159.1s
+[2026-10-11T17:41:43] running completed=159190 pending=33152 quarantined=0 requests=4270 failed=0 spent_run=$0.154381962 ledger=$0.471446724 elapsed=1190.0s
+[2026-10-11T17:42:14] running completed=159789 pending=32553 quarantined=0 requests=4389 failed=0 spent_run=$0.158683476 ledger=$0.475748238 elapsed=1220.9s
+[2026-10-11T17:42:45] running completed=160395 pending=31947 quarantined=0 requests=4505 failed=0 spent_run=$0.162879990 ledger=$0.479944752 elapsed=1251.7s
+[2026-10-11T17:43:16] running completed=161015 pending=31327 quarantined=0 requests=4623 failed=0 spent_run=$0.167146560 ledger=$0.484211322 elapsed=1282.6s
+[2026-10-11T17:43:47] running completed=161588 pending=30754 quarantined=0 requests=4741 failed=0 spent_run=$0.171414012 ledger=$0.488478774 elapsed=1313.5s
+[2026-10-11T17:44:18] running completed=162112 pending=30230 quarantined=0 requests=4850 failed=0 spent_run=$0.175355544 ledger=$0.492420306 elapsed=1344.5s
+[2026-10-11T17:44:49] running completed=162692 pending=29650 quarantined=0 requests=4969 failed=0 spent_run=$0.179658024 ledger=$0.496722786 elapsed=1375.4s
+[2026-10-11T17:45:20] running completed=163183 pending=29159 quarantined=0 requests=5080 failed=0 spent_run=$0.183672510 ledger=$0.500737272 elapsed=1406.3s
+[2026-10-11T17:45:51] running completed=163672 pending=28670 quarantined=0 requests=5190 failed=0 spent_run=$0.187649700 ledger=$0.504714462 elapsed=1437.3s
+[2026-10-11T17:46:22] running completed=164199 pending=28143 quarantined=0 requests=5307 failed=0 spent_run=$0.191881326 ledger=$0.508946088 elapsed=1468.2s
+[2026-10-11T17:46:53] running completed=164684 pending=27658 quarantined=0 requests=5424 failed=0 spent_run=$0.196111608 ledger=$0.513176370 elapsed=1499.1s
+[2026-10-11T17:47:24] running completed=165182 pending=27160 quarantined=0 requests=5542 failed=0 spent_run=$0.200378682 ledger=$0.517443444 elapsed=1530.1s
+[2026-10-11T17:47:55] running completed=165780 pending=26562 quarantined=0 requests=5661 failed=0 spent_run=$0.204683682 ledger=$0.521748444 elapsed=1561.1s
+[2026-10-11T17:48:26] running completed=166309 pending=26033 quarantined=0 requests=5778 failed=0 spent_run=$0.208915014 ledger=$0.525979776 elapsed=1592.0s
+[2026-10-11T17:48:57] running completed=166855 pending=25487 quarantined=0 requests=5895 failed=0 spent_run=$0.213148194 ledger=$0.530212956 elapsed=1623.2s
+[2026-10-11T17:49:28] running completed=167367 pending=24975 quarantined=0 requests=6014 failed=0 spent_run=$0.217453656 ledger=$0.534518418 elapsed=1654.2s
+[2026-10-11T17:49:59] running completed=167894 pending=24448 quarantined=0 requests=6132 failed=0 spent_run=$0.221721822 ledger=$0.538786584 elapsed=1685.2s
+[2026-10-11T17:50:30] running completed=168410 pending=23932 quarantined=0 requests=6250 failed=0 spent_run=$0.225989232 ledger=$0.543053994 elapsed=1716.2s
+[2026-10-11T17:51:01] running completed=168828 pending=23514 quarantined=0 requests=6368 failed=0 spent_run=$0.230255718 ledger=$0.547320480 elapsed=1747.2s
+[2026-10-11T17:51:32] running completed=169296 pending=23046 quarantined=0 requests=6486 failed=0 spent_run=$0.234522162 ledger=$0.551586924 elapsed=1778.2s
+[2026-10-11T17:52:03] running completed=169668 pending=22674 quarantined=0 requests=6596 failed=0 spent_run=$0.238504728 ledger=$0.555569490 elapsed=1809.1s
+[2026-10-11T17:52:34] running completed=170081 pending=22261 quarantined=0 requests=6714 failed=0 spent_run=$0.242778438 ledger=$0.559843200 elapsed=1839.9s
+[2026-10-11T17:53:04] running completed=170512 pending=21830 quarantined=0 requests=6833 failed=0 spent_run=$0.247084278 ledger=$0.564149040 elapsed=1871.0s
+[2026-10-11T17:53:36] running completed=170935 pending=21407 quarantined=0 requests=6951 failed=0 spent_run=$0.251350806 ledger=$0.568415568 elapsed=1902.0s
+[2026-10-11T17:54:06] running completed=171344 pending=20998 quarantined=0 requests=7069 failed=0 spent_run=$0.255618552 ledger=$0.572683314 elapsed=1932.9s
+[2026-10-11T17:54:38] running completed=171760 pending=20582 quarantined=0 requests=7187 failed=0 spent_run=$0.259887432 ledger=$0.576952194 elapsed=1963.8s
+[2026-10-11T17:55:09] running completed=172154 pending=20188 quarantined=0 requests=7304 failed=0 spent_run=$0.264120906 ledger=$0.581185668 elapsed=1995.4s
+[2026-10-11T17:55:40] running completed=172541 pending=19801 quarantined=0 requests=7421 failed=0 spent_run=$0.268355850 ledger=$0.585420612 elapsed=2026.3s
+[2026-10-11T17:56:11] running completed=172983 pending=19359 quarantined=0 requests=7538 failed=0 spent_run=$0.272586678 ledger=$0.589651440 elapsed=2057.2s
+[2026-10-11T17:56:42] running completed=173394 pending=18948 quarantined=0 requests=7654 failed=0 spent_run=$0.276783906 ledger=$0.593848668 elapsed=2088.1s
+[2026-10-11T17:57:13] running completed=173801 pending=18541 quarantined=0 requests=7769 failed=0 spent_run=$0.280945140 ledger=$0.598009902 elapsed=2119.1s
+[2026-10-11T17:57:44] running completed=174186 pending=18156 quarantined=0 requests=7886 failed=0 spent_run=$0.285176598 ledger=$0.602241360 elapsed=2150.0s
+[2026-10-11T17:58:14] running completed=174575 pending=17767 quarantined=0 requests=8003 failed=0 spent_run=$0.289408644 ledger=$0.606473406 elapsed=2180.9s
+[2026-10-11T17:58:45] running completed=174929 pending=17413 quarantined=0 requests=8115 failed=0 spent_run=$0.293458788 ledger=$0.610523550 elapsed=2211.8s
+[2026-10-11T17:59:16] running completed=175317 pending=17025 quarantined=0 requests=8232 failed=0 spent_run=$0.297691590 ledger=$0.614756352 elapsed=2242.8s
+[2026-10-11T17:59:47] running completed=175733 pending=16609 quarantined=0 requests=8350 failed=0 spent_run=$0.301963074 ledger=$0.619027836 elapsed=2273.6s
+[2026-10-11T18:00:18] running completed=176095 pending=16247 quarantined=0 requests=8468 failed=0 spent_run=$0.306231324 ledger=$0.623296086 elapsed=2304.7s
+[2026-10-11T18:00:49] running completed=176511 pending=15831 quarantined=0 requests=8586 failed=0 spent_run=$0.310498398 ledger=$0.627563160 elapsed=2335.6s
+[2026-10-11T18:01:20] running completed=176886 pending=15456 quarantined=0 requests=8704 failed=0 spent_run=$0.314767152 ledger=$0.631831914 elapsed=2366.5s
+[2026-10-11T18:01:51] running completed=177243 pending=15099 quarantined=0 requests=8822 failed=0 spent_run=$0.319034856 ledger=$0.636099618 elapsed=2397.4s
+[2026-10-11T18:02:22] running completed=177619 pending=14723 quarantined=0 requests=8939 failed=0 spent_run=$0.323265936 ledger=$0.640330698 elapsed=2428.2s
+[2026-10-11T18:02:53] running completed=177953 pending=14389 quarantined=0 requests=9047 failed=0 spent_run=$0.327172440 ledger=$0.644237202 elapsed=2459.1s
+[2026-10-11T18:03:24] running completed=178298 pending=14044 quarantined=0 requests=9163 failed=0 spent_run=$0.331366392 ledger=$0.648431154 elapsed=2490.2s
+[2026-10-11T18:03:55] running completed=178634 pending=13708 quarantined=0 requests=9282 failed=0 spent_run=$0.335673534 ledger=$0.652738296 elapsed=2521.2s
+[2026-10-11T18:04:26] running completed=178993 pending=13349 quarantined=0 requests=9399 failed=0 spent_run=$0.339905370 ledger=$0.656970132 elapsed=2552.1s
+[2026-10-11T18:04:57] running completed=179367 pending=12975 quarantined=0 requests=9517 failed=0 spent_run=$0.344174880 ledger=$0.661239642 elapsed=2583.3s
+[2026-10-11T18:05:28] running completed=179708 pending=12634 quarantined=0 requests=9624 failed=0 spent_run=$0.348043878 ledger=$0.665108640 elapsed=2614.2s
+[2026-10-11T18:05:59] running completed=180037 pending=12305 quarantined=0 requests=9739 failed=0 spent_run=$0.352202760 ledger=$0.669267522 elapsed=2645.2s
+[2026-10-11T18:06:30] running completed=180403 pending=11939 quarantined=0 requests=9856 failed=0 spent_run=$0.356434134 ledger=$0.673498896 elapsed=2676.0s
+[2026-10-11T18:07:01] running completed=180780 pending=11562 quarantined=0 requests=9974 failed=0 spent_run=$0.360701544 ledger=$0.677766306 elapsed=2707.0s
+[2026-10-11T18:07:32] running completed=181114 pending=11228 quarantined=0 requests=10091 failed=0 spent_run=$0.364932876 ledger=$0.681997638 elapsed=2738.0s
+[2026-10-11T18:08:03] running completed=181469 pending=10873 quarantined=0 requests=10209 failed=0 spent_run=$0.369202176 ledger=$0.686266938 elapsed=2769.0s
+[2026-10-11T18:08:33] running completed=181785 pending=10557 quarantined=0 requests=10318 failed=0 spent_run=$0.373145976 ledger=$0.690210738 elapsed=2799.8s
+[2026-10-11T18:09:04] running completed=182106 pending=10236 quarantined=0 requests=10437 failed=0 spent_run=$0.377450850 ledger=$0.694515612 elapsed=2830.7s
+[2026-10-11T18:09:35] running completed=182422 pending=9920 quarantined=0 requests=10554 failed=0 spent_run=$0.381685122 ledger=$0.698749884 elapsed=2861.7s
+[2026-10-11T18:10:12] running completed=182720 pending=9622 quarantined=0 requests=10659 failed=0 spent_run=$0.385481880 ledger=$0.702546642 elapsed=2898.4s
+[2026-10-11T18:10:43] running completed=183034 pending=9308 quarantined=0 requests=10777 failed=0 spent_run=$0.389750046 ledger=$0.706814808 elapsed=2929.3s
+[2026-10-11T18:11:14] running completed=183361 pending=8981 quarantined=0 requests=10896 failed=0 spent_run=$0.394055676 ledger=$0.711120438 elapsed=2960.3s
+[2026-10-11T18:11:45] running completed=183673 pending=8669 quarantined=0 requests=11012 failed=0 spent_run=$0.398255718 ledger=$0.715320480 elapsed=2991.1s
+[2026-10-11T18:12:16] running completed=183976 pending=8366 quarantined=0 requests=11129 failed=0 spent_run=$0.402487764 ledger=$0.719552526 elapsed=3022.1s
+[2026-10-11T18:12:47] running completed=184295 pending=8047 quarantined=0 requests=11246 failed=0 spent_run=$0.406720440 ledger=$0.723785202 elapsed=3053.0s
+[2026-10-11T18:13:18] running completed=184617 pending=7725 quarantined=0 requests=11363 failed=0 spent_run=$0.410954460 ledger=$0.728019222 elapsed=3084.0s
+[2026-10-11T18:13:48] running completed=184941 pending=7401 quarantined=0 requests=11480 failed=0 spent_run=$0.415188816 ledger=$0.732253578 elapsed=3114.9s
+[2026-10-11T18:14:19] running completed=185260 pending=7082 quarantined=0 requests=11593 failed=0 spent_run=$0.419275626 ledger=$0.736340388 elapsed=3145.7s
+[2026-10-11T18:14:50] running completed=185554 pending=6788 quarantined=0 requests=11708 failed=0 spent_run=$0.423435978 ledger=$0.740500740 elapsed=3176.6s
+[2026-10-11T18:15:21] running completed=185850 pending=6492 quarantined=0 requests=11817 failed=0 spent_run=$0.427383180 ledger=$0.744447942 elapsed=3207.6s
+[2026-10-11T18:15:52] running completed=186155 pending=6187 quarantined=0 requests=11934 failed=0 spent_run=$0.431614848 ledger=$0.748679610 elapsed=3238.5s
+[2026-10-11T18:16:23] running completed=186453 pending=5889 quarantined=0 requests=12049 failed=0 spent_run=$0.435776754 ledger=$0.752841516 elapsed=3269.4s
+[2026-10-11T18:16:54] running completed=186725 pending=5617 quarantined=0 requests=12163 failed=0 spent_run=$0.439900944 ledger=$0.756965706 elapsed=3300.3s
+[2026-10-11T18:17:25] running completed=187008 pending=5334 quarantined=0 requests=12280 failed=0 spent_run=$0.444132864 ledger=$0.761197626 elapsed=3331.2s
+[2026-10-11T18:17:56] running completed=187298 pending=5044 quarantined=0 requests=12397 failed=0 spent_run=$0.448370874 ledger=$0.765435636 elapsed=3362.1s
+[2026-10-11T18:18:27] running completed=187591 pending=4751 quarantined=0 requests=12514 failed=0 spent_run=$0.452603718 ledger=$0.769668480 elapsed=3392.9s
+[2026-10-11T18:18:57] running completed=187862 pending=4480 quarantined=0 requests=12624 failed=0 spent_run=$0.456582126 ledger=$0.773646888 elapsed=3423.9s
+[2026-10-11T18:19:28] running completed=188143 pending=4199 quarantined=0 requests=12741 failed=0 spent_run=$0.460815894 ledger=$0.777880656 elapsed=3454.8s
+[2026-10-11T18:19:59] running completed=188407 pending=3935 quarantined=0 requests=12858 failed=0 spent_run=$0.465049956 ledger=$0.782114718 elapsed=3485.7s
+[2026-10-11T18:20:30] running completed=188702 pending=3640 quarantined=0 requests=12975 failed=0 spent_run=$0.469282716 ledger=$0.786347478 elapsed=3516.5s
+[2026-10-11T18:21:01] running completed=188972 pending=3370 quarantined=0 requests=13092 failed=0 spent_run=$0.473514510 ledger=$0.790579272 elapsed=3547.4s
+[2026-10-11T18:21:32] running completed=189233 pending=3109 quarantined=0 requests=13209 failed=0 spent_run=$0.477746178 ledger=$0.794810940 elapsed=3578.3s
+[2026-10-11T18:22:03] running completed=189438 pending=2904 quarantined=0 requests=13299 failed=0 spent_run=$0.481001640 ledger=$0.798066402 elapsed=3609.3s
+[2026-10-11T18:22:34] running completed=189719 pending=2623 quarantined=0 requests=13416 failed=0 spent_run=$0.485233434 ledger=$0.802298196 elapsed=3640.3s
+[2026-10-11T18:23:05] running completed=189978 pending=2364 quarantined=0 requests=13535 failed=0 spent_run=$0.489537048 ledger=$0.806601810 elapsed=3671.3s
+[2026-10-11T18:23:36] running completed=190252 pending=2090 quarantined=0 requests=13652 failed=0 spent_run=$0.493768842 ledger=$0.810833604 elapsed=3702.3s
+[2026-10-11T18:24:07] running completed=190519 pending=1823 quarantined=0 requests=13770 failed=0 spent_run=$0.498036714 ledger=$0.815101476 elapsed=3733.3s
+[2026-10-11T18:24:38] running completed=190765 pending=1577 quarantined=0 requests=13881 failed=0 spent_run=$0.502055400 ledger=$0.819120162 elapsed=3764.2s
+[2026-10-11T18:25:09] running completed=191023 pending=1319 quarantined=0 requests=14000 failed=0 spent_run=$0.506361912 ledger=$0.823426674 elapsed=3795.4s
+[2026-10-11T18:25:40] running completed=191275 pending=1067 quarantined=0 requests=14115 failed=0 spent_run=$0.510520584 ledger=$0.827585346 elapsed=3826.4s
+[2026-10-11T18:26:11] running completed=191532 pending=810 quarantined=0 requests=14233 failed=0 spent_run=$0.514790808 ledger=$0.831855570 elapsed=3857.4s
+[2026-10-11T18:26:42] running completed=191781 pending=561 quarantined=0 requests=14352 failed=0 spent_run=$0.519095388 ledger=$0.836160150 elapsed=3888.4s
+[2026-10-11T18:27:13] running completed=192018 pending=324 quarantined=0 requests=14463 failed=0 spent_run=$0.523111218 ledger=$0.840175980 elapsed=3919.3s
+[2026-10-11T18:27:44] running completed=192258 pending=84 quarantined=0 requests=14581 failed=0 spent_run=$0.527382702 ledger=$0.844447464 elapsed=3950.3s
+[2026-10-11T18:28:00] finished completed=192342 pending=0 quarantined=0 requests=14622 failed=0 spent_run=$0.528902808 ledger=$0.845967570 elapsed=3966.6s
+{
+  "run_id": "enrich-20261011T172153Z",
+  "label_config": "typesafe-ai/jev+p1+s1+x1",
+  "phase": "resume",
+  "started_at": "2026-10-11T17:21:53.142874+00:00",
+  "requests": 14622,
+  "succeeded_requests": 14622,
+  "failed_requests": 0,
+  "completed_by_model": 14622,
+  "completed_by_cache": 174868,
+  "invalid_outputs": 0,
+  "quarantined": 0,
+  "input_tokens": 12592924,
+  "output_tokens": 2867204,
+  "charged_usd": "0.528902808",
+  "stop_reason": "queue_empty",
+  "elapsed_s": 3966.583,
+  "first_dispatches": 14622,
+  "network_outages": 0,
+  "network_wait_s": 0.0,
+  "not_sent_failures": 0,
+  "unknown_outcomes": 0,
+  "statuses_after": {
+    "pending": 461119,
+    "completed": 199490,
+    "quarantined": 13
+  },
+  "provider": "vercel-ai-gateway",
+  "model": "typesafe-ai/jev",
+  "ledger_spent_usd": "0.845967570",
+  "budget_cap_usd": "4.00",
+  "synthetic_labels": false,
+  "sample": null,
+  "stratum": "duplicates",
+  "exit_code": 0
+}

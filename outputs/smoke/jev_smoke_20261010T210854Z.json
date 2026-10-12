@@ -1,0 +1,196 @@
+{
+  "attempted_at": "2026-10-10T21:08:54.819769+00:00",
+  "elapsed_seconds": 0.734,
+  "endpoint": "https://ai-gateway.vercel.sh/typesafe/v1/systemone",
+  "error": null,
+  "estimated_cost_usd": "0.00003444",
+  "gateway_reported_cost_usd": "0.00003444",
+  "generation_id": "gen_01M4KTBEPERTGWG9DBS3H3X72A",
+  "http_status": 200,
+  "model_requested": "typesafe-ai/jev",
+  "note": "Synthetic single-review connectivity check; not part of the dataset run or the cost pilot.",
+  "outcome": "succeeded",
+  "rates": {
+    "checked": "2026-10-09",
+    "input_per_1m_usd": "0.042",
+    "output_per_1m_usd": "0"
+  },
+  "request_body": {
+    "model": "typesafe-ai/jev",
+    "questions": {
+      "intent": {
+        "criteria": {
+          "cancellation": "Explicitly leaving, uninstalling, cancelling, or threatening to",
+          "complaint": "Reports a negative experience, including mixed praise and criticism",
+          "praise": "Positive experience only",
+          "request": "Asks for a change without reporting a failure",
+          "unclear": "Unrelated, meaningless, or a bare slogan"
+        },
+        "instructions": "What is the reviewer's intent?",
+        "type": "choice"
+      },
+      "sentiment": {
+        "criteria": [
+          "Very negative",
+          "Negative",
+          "Neutral or mixed",
+          "Positive",
+          "Very positive"
+        ],
+        "instructions": "What is the overall sentiment of the review?",
+        "type": "score"
+      },
+      "severity": {
+        "criteria": {
+          "1": "No reported problem: praise, unclear content, or a pure feature request",
+          "2": "Dislike, generic criticism, or minor annoyance; no functional loss",
+          "3": "A degraded or restricted function; some use remains",
+          "4": "A core task is clearly blocked, such as logging in or playing music",
+          "5": "Explicit serious financial, privacy, or data harm"
+        },
+        "instructions": "How severe is the reported impact?",
+        "type": "choice"
+      },
+      "topic": {
+        "criteria": {
+          "access": "Login, signup, password or account access",
+          "billing": "Price, charges, subscriptions, paywalls, premium entitlement",
+          "catalog": "Missing songs/artists, search/discovery, recommendations, lyrics availability",
+          "downloads": "Downloading, saved music, offline listening, disappearing downloads",
+          "other": "General praise/criticism, unrelated content, or no specific topic",
+          "playback": "Playback failure, crashes, lag, connection failures, audio quality, resource use",
+          "support": "Contacting support and the support response",
+          "usability": "Navigation, controls, layout, queue/playlist management, ad interruptions"
+        },
+        "instructions": "Which product area is the main problem or praised feature in this app review?",
+        "type": "choice"
+      }
+    },
+    "state": "The app keeps logging me out and now I can't sign back in at all."
+  },
+  "response": {
+    "answers": {
+      "intent": {
+        "choice": "complaint",
+        "confidence": 1,
+        "probabilities": {
+          "cancellation": 0,
+          "complaint": 1,
+          "praise": 0,
+          "request": 0,
+          "unclear": 0
+        },
+        "type": "choice"
+      },
+      "sentiment": {
+        "confidence": 0.88,
+        "legend": {
+          "0": "Very negative",
+          "1": "Negative",
+          "2": "Neutral or mixed",
+          "3": "Positive",
+          "4": "Very positive"
+        },
+        "probabilities": {
+          "0": 0.86,
+          "1": 0.14,
+          "2": 0,
+          "3": 0,
+          "4": 0
+        },
+        "score": 0.14,
+        "type": "score"
+      },
+      "severity": {
+        "choice": "4",
+        "confidence": 1,
+        "probabilities": {
+          "1": 0,
+          "2": 0,
+          "3": 0,
+          "4": 1,
+          "5": 0
+        },
+        "type": "choice"
+      },
+      "topic": {
+        "choice": "access",
+        "confidence": 1,
+        "probabilities": {
+          "access": 1,
+          "billing": 0,
+          "catalog": 0,
+          "downloads": 0,
+          "other": 0,
+          "playback": 0,
+          "support": 0,
+          "usability": 0
+        },
+        "type": "choice"
+      }
+    },
+    "model": "typesafe-ai/jev",
+    "provider_metadata": {
+      "gateway": {
+        "cost": "0.00003444",
+        "gatewayCost": "0.00003444",
+        "generationId": "gen_01M4KTBEPERTGWG9DBS3H3X72A",
+        "inferenceCost": "0.00003444",
+        "inputInferenceCost": "0.00003444",
+        "marketCost": "0.00003444",
+        "outputInferenceCost": "0",
+        "routing": {
+          "canonicalSlug": "typesafe-ai/jev",
+          "fallbacksAvailable": [
+            "digitalocean"
+          ],
+          "finalProvider": "typesafe-ai",
+          "modelAttemptCount": 1,
+          "modelAttempts": [
+            {
+              "canonicalSlug": "typesafe-ai/jev",
+              "providerAttemptCount": 1,
+              "providerAttempts": [
+                {
+                  "credentialType": "system",
+                  "endTime": 1791666535584,
+                  "provider": "typesafe-ai",
+                  "startTime": 1791666535470,
+                  "statusCode": 200,
+                  "success": true
+                }
+              ],
+              "success": true
+            }
+          ],
+          "originalModelId": "typesafe-ai/jev",
+          "planningReasoning": "System credentials planned for: typesafe-ai, digitalocean. Total execution order: typesafe-ai(system) → digitalocean(system)",
+          "resolvedProvider": "typesafe-ai",
+          "totalProviderAttemptCount": 1
+        },
+        "surchargeCost": "0"
+      },
+      "typesafe": {
+        "confidence": {
+          "intent": 1,
+          "sentiment": 0.88,
+          "severity": 1,
+          "topic": 1
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 820,
+      "output_tokens": 196
+    }
+  },
+  "response_headers": {
+    "Content-Type": "application/json",
+    "X-Vercel-Id": "sfo1::cle1::d49kn-1791666535084-611c3020e984"
+  },
+  "retries": 0,
+  "usage": {
+    "input_tokens": 820,
+    "output_tokens": 196
+  }
+}

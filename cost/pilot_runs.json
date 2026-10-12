@@ -1,0 +1,78 @@
+{
+  "cold": {
+    "batch_size": 1,
+    "cache_hits": 0,
+    "completed": 100,
+    "failed": 0,
+    "input": "cost_100.csv",
+    "input_rows": 100,
+    "input_sha256": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e",
+    "kind": "cold",
+    "models": {
+      "enrich": "typesafe-ai/jev",
+      "group": "openai/gpt-6-luna",
+      "memo": "openai/gpt-6-luna",
+      "verify": "typesafe-ai/jev"
+    },
+    "new_calls_by_role": {
+      "enrich": 100,
+      "group": 1,
+      "memo": 1,
+      "verify": 20
+    },
+    "pending": 0,
+    "quarantined": 0,
+    "requests_per_second": 2.0,
+    "stage_seconds": {
+      "enrich": 50.823,
+      "export": 0.018,
+      "group": 2.495,
+      "ingest": 0.128,
+      "memo": 12.597,
+      "verify": 10.067
+    },
+    "stamp": "20261012T011300085037Z",
+    "synthetic": false,
+    "unique_texts": 100,
+    "wall_clock_s": 76.131,
+    "workers": 1
+  },
+  "warm": {
+    "batch_size": 1,
+    "cache_hits": 0,
+    "completed": 100,
+    "failed": 0,
+    "input": "cost_100.csv",
+    "input_rows": 100,
+    "input_sha256": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e",
+    "kind": "warm",
+    "models": {
+      "enrich": "typesafe-ai/jev",
+      "group": "openai/gpt-6-luna",
+      "memo": "openai/gpt-6-luna",
+      "verify": "typesafe-ai/jev"
+    },
+    "new_calls_by_role": {
+      "enrich": 0,
+      "group": 0,
+      "memo": 0,
+      "verify": 0
+    },
+    "pending": 0,
+    "quarantined": 0,
+    "requests_per_second": 2.0,
+    "stage_seconds": {
+      "enrich": 0.005,
+      "export": 0.067,
+      "group": 0.011,
+      "ingest": 0.014,
+      "memo": 0.007,
+      "verify": 0.005
+    },
+    "stamp": "20261012T011416221898Z",
+    "synthetic": false,
+    "unique_texts": 0,
+    "wall_clock_s": 0.111,
+    "workers": 1
+  }
+}

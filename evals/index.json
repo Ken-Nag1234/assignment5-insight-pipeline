@@ -1,0 +1,31 @@
+{
+  "golden": [
+    "metrics.json",
+    "disagreement_patterns.json"
+  ],
+  "injection": "present",
+  "offline_tests": "python3 -m unittest discover -s tests (synthetic fixtures and mock models only; see tests/test_resilience.py for simulated network outages)",
+  "resume": {
+    "before_ids_without_initial_call_or_cache": 0,
+    "before_subset_of_after": true,
+    "checkpoint_after": 2513,
+    "checkpoint_before": 2438,
+    "checks_pass": true,
+    "new_after_resume": 75,
+    "new_via_cache": 10,
+    "new_via_resume_calls": 65,
+    "resume_calls_resending_checkpointed_ids": 0,
+    "rules": "Same conditions as check_submission.py (resume_snapshot_mismatch, reprocessed_checkpoint, resume_call_evidence).",
+    "taken_at": {
+      "after": "2026-10-11T08:03:24.110379+00:00",
+      "before": "2026-10-11T07:57:08.835878+00:00"
+    }
+  },
+  "verification": [
+    "report.json",
+    "report.md",
+    "disagreements.csv",
+    "planted_report.json",
+    "sample.json"
+  ]
+}

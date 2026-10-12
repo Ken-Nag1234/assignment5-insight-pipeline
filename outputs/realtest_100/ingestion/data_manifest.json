@@ -1,0 +1,52 @@
+{
+  "code": {
+    "pipeline/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pipeline/checkpoint.py": "0842b26a741d09e23f98cd778fd975e975b6ef75ca81f946903060bdc036ecc7",
+    "pipeline/common.py": "6d32d2f44ed846eb578dda511ab98d561770e4ef28bdee93ca6d232f2878c200",
+    "pipeline/config.py": "9a26bc217f7425a89cfc20dd3f252ed524efef34239dfde6fb87ea0ef2a7f3c1",
+    "pipeline/costcalc.py": "418751d90f613fb0b7d8b36dade582155514b6cd29571c62f62b10b17dff72e1",
+    "pipeline/db.py": "ed0e4a1cb221d5c2581597d2915894ab2f4f5aa732efc7107f86f36f77b45c89",
+    "pipeline/enrich.py": "6abce73acafc3f53eae6a7c92bf9de21ed9d694d7c01025a4052132120198a39",
+    "pipeline/export.py": "7a1c68a65b69ec749eb410fede0be8dbf2586886a61f9a77a5989e2226ccd8a7",
+    "pipeline/extract.py": "307c41ecdd0f52cdbe01474e277ffdb5786a57f7ee99cb8ba051ad89b6a9f165",
+    "pipeline/golden.py": "9a2acdade4b3ef6c50cf78be727c2d9fe990cc633fef47c9b2968ed5143b8c25",
+    "pipeline/group.py": "86cd22d812949a38ac0cf97ba83d9d06b51501529314548f6e58c7f7aedf087f",
+    "pipeline/ingest.py": "0dc88ce8bda3e929458cb6e668848cf329faf4b15d883bc389f3effb65194257",
+    "pipeline/labels.py": "9340a69d7a4ea70930f62017ee98913334c0d4ceee431812e98577f020476dbd",
+    "pipeline/ledger.py": "863c4789a78871f1066b7eecbb3f39ae85011f235f922e355e58fb2f18fdf839",
+    "pipeline/providers.py": "90d92a4b4b25a7618d1bc51012e479fb1bed53e11cfd66fb63244ff584c8ecba",
+    "pipeline/rank.py": "9b193f55847bc7ef6e4cfd6382dbe7a0162815a6ba4cd0f3291fda932a0e25a2",
+    "pipeline/samples.py": "2df0b3fe4b7f1d1d5bf726ae7fe9449a04a032ac1a7e8fb2c67f99f2e8782ed0",
+    "pipeline/smoke_jev.py": "2797d21cc8a567493a4ace67aec58dea69bd5b061b77943a7267771d5e72be77"
+  },
+  "database": {
+    "path": "work/realtest_100.sqlite",
+    "schema_version": "2"
+  },
+  "environment": {
+    "platform": "macOS-15.8-x86_64-i386-64bit-Mach-O",
+    "python": "3.13.15"
+  },
+  "outputs": {
+    "outputs/realtest_100/ingestion/ingestion.json": "4277d2569fec08d8e534d9d4fb985971db358423b836f1078d3d92ce65d85087",
+    "outputs/realtest_100/ingestion/ingestion_report.json": "8a3b4bf43a96681af3482cae04492831db9b5ac89c976c6607e155c32b4819fe",
+    "outputs/realtest_100/ingestion/quarantine.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "provided_helper": {
+    "file": "check_submission.py",
+    "functions_used": [
+      "row_sha",
+      "csv_rows",
+      "profile",
+      "sha"
+    ],
+    "sha256": "d60bd66d84922d934c65b3d42b2c7d36cc738e8c75e2d6f2b2f58bca3141c26d"
+  },
+  "run_id": "ingest-20261010T211444Z-c884ac3b",
+  "source": {
+    "bytes": 15466,
+    "name": "cost_100.csv",
+    "parsed_rows_sha256": "23f840350257c058a03a508754384902373a593c09dbac3d1bd0481651fa1733",
+    "sha256": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e"
+  }
+}

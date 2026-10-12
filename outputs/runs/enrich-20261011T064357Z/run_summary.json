@@ -1,0 +1,31 @@
+{
+  "budget_cap_usd": "0.05",
+  "charged_usd": "0.017654280",
+  "completed_by_cache": 21,
+  "completed_by_model": 479,
+  "elapsed_s": 255.197,
+  "failed_requests": 0,
+  "first_dispatches": 479,
+  "input_tokens": 420340,
+  "invalid_outputs": 0,
+  "label_config": "typesafe-ai/jev+p1+s1+x1",
+  "ledger_spent_usd": "0.023143848",
+  "model": "typesafe-ai/jev",
+  "output_tokens": 94106,
+  "phase": "initial",
+  "provider": "vercel-ai-gateway",
+  "quarantined": 0,
+  "requests": 479,
+  "run_id": "enrich-20261011T064357Z",
+  "sample": "checkpoint_500",
+  "started_at": "2026-10-11T06:43:57.185732+00:00",
+  "statuses_after": {
+    "completed": 500,
+    "pending": 660109,
+    "quarantined": 13
+  },
+  "stop_reason": "queue_empty",
+  "stratum": null,
+  "succeeded_requests": 479,
+  "synthetic_labels": false
+}

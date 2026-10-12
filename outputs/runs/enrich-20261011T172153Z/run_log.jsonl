@@ -1,0 +1,2 @@
+{"at": "2026-10-11T17:22:36.624380+00:00", "batches": 14622, "cache_reused": 119479, "event": "queue_built", "groups": 14622, "run_id": "enrich-20261011T172153Z", "scope": {"limit": null, "max_requests": null, "requests_per_second": 4.0, "sample": null, "stratum": "duplicates", "workers": 2}}
+{"at": "2026-10-11T18:27:59.833420+00:00", "event": "run_finished", "requests": 14622, "run_id": "enrich-20261011T172153Z", "stop_reason": "queue_empty"}

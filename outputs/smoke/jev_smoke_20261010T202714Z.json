@@ -1,0 +1,83 @@
+{
+  "attempted_at": "2026-10-10T20:27:14.047934+00:00",
+  "elapsed_seconds": 0.459,
+  "endpoint": "https://ai-gateway.vercel.sh/typesafe/v1/systemone",
+  "error": null,
+  "estimated_cost_usd": null,
+  "gateway_reported_cost_usd": null,
+  "generation_id": null,
+  "http_status": 403,
+  "model_requested": "typesafe-ai/jev",
+  "note": "Synthetic single-review connectivity check; not part of the dataset run or the cost pilot.",
+  "outcome": "failed",
+  "rates": {
+    "checked": "2026-10-09",
+    "input_per_1m_usd": "0.042",
+    "output_per_1m_usd": "0"
+  },
+  "request_body": {
+    "model": "typesafe-ai/jev",
+    "questions": {
+      "intent": {
+        "criteria": {
+          "cancellation": "Explicitly leaving, uninstalling, cancelling, or threatening to",
+          "complaint": "Reports a negative experience, including mixed praise and criticism",
+          "praise": "Positive experience only",
+          "request": "Asks for a change without reporting a failure",
+          "unclear": "Unrelated, meaningless, or a bare slogan"
+        },
+        "instructions": "What is the reviewer's intent?",
+        "type": "choice"
+      },
+      "sentiment": {
+        "criteria": [
+          "Very negative",
+          "Negative",
+          "Neutral or mixed",
+          "Positive",
+          "Very positive"
+        ],
+        "instructions": "What is the overall sentiment of the review?",
+        "type": "score"
+      },
+      "severity": {
+        "criteria": {
+          "1": "No reported problem: praise, unclear content, or a pure feature request",
+          "2": "Dislike, generic criticism, or minor annoyance; no functional loss",
+          "3": "A degraded or restricted function; some use remains",
+          "4": "A core task is clearly blocked, such as logging in or playing music",
+          "5": "Explicit serious financial, privacy, or data harm"
+        },
+        "instructions": "How severe is the reported impact?",
+        "type": "choice"
+      },
+      "topic": {
+        "criteria": {
+          "access": "Login, signup, password or account access",
+          "billing": "Price, charges, subscriptions, paywalls, premium entitlement",
+          "catalog": "Missing songs/artists, search/discovery, recommendations, lyrics availability",
+          "downloads": "Downloading, saved music, offline listening, disappearing downloads",
+          "other": "General praise/criticism, unrelated content, or no specific topic",
+          "playback": "Playback failure, crashes, lag, connection failures, audio quality, resource use",
+          "support": "Contacting support and the support response",
+          "usability": "Navigation, controls, layout, queue/playlist management, ad interruptions"
+        },
+        "instructions": "Which product area is the main problem or praised feature in this app review?",
+        "type": "choice"
+      }
+    },
+    "state": "The app keeps logging me out and now I can't sign back in at all."
+  },
+  "response": {
+    "error": {
+      "message": "AI Gateway requires a valid credit card on file to service requests. Please visit https://vercel.com/d?to=%2F%5Bteam%5D%2F%7E%2Fai%3Fmodal%3Dadd-credit-card to add a card and unlock your free credits.",
+      "type": "customer_verification_required"
+    }
+  },
+  "response_headers": {
+    "Content-Type": "application/json",
+    "X-Vercel-Id": "sfo1::cle1::78j2n-1791664034283-417665bd2ffd"
+  },
+  "retries": 0,
+  "usage": null
+}

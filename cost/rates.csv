@@ -1,0 +1,5 @@
+item_id,provider,model,unit,price_usd,per_units,currency,checked,source_url,notes
+jev_input,vercel-ai-gateway,typesafe-ai/jev,input_tokens,0.042,1000000,USD,2026-10-09,https://docs.typesafe.ai/models.md,Uncached input tokens; Vercel model list shows $0.04/1M (rounded)
+jev_output,vercel-ai-gateway,typesafe-ai/jev,output_tokens,0,1000000,USD,2026-10-09,https://docs.typesafe.ai/models.md,Output tokens are free
+luna_input,vercel-ai-gateway,openai/gpt-6-luna,input_tokens,0.10,1000000,USD,2026-10-11,https://vercel.com/ai-gateway/models/gpt-6-luna,Standard uncached input; same rate on https://developers.openai.com/api/docs/models/gpt-6-luna
+luna_output,vercel-ai-gateway,openai/gpt-6-luna,output_tokens,0.50,1000000,USD,2026-10-11,https://vercel.com/ai-gateway/models/gpt-6-luna,Includes reasoning tokens; reasoning_effort=none requested

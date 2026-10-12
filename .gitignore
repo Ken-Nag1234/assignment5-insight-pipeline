@@ -10,7 +10,8 @@ checkpoint_500.csv
 analysis_10000.csv
 golden_50_to_label.csv
 # Golden working file contains raw review text; commit decision pending
-golden/golden_50_labels.csv
+golden/golden_50_labels*.csv
+golden/golden_50_labels*.xlsx
 
 # Instructor-provided assignment document (not redistributed)
 *.docx
@@ -33,3 +34,8 @@ __pycache__/
 
 # OS / editor
 .DS_Store
+
+# Deployment / tooling state (Vercel CLI link, caches)
+.vercel/
+.pytest_cache/
+node_modules/

@@ -1,0 +1,27 @@
+{
+  "metrics": {
+    "entities": {},
+    "evidence_quote": {},
+    "intent": {
+      "accuracy_accepted": 0.88,
+      "accuracy_strict": 0.88,
+      "macro_f1_accepted": 0.7581,
+      "macro_f1_strict": 0.7581
+    },
+    "needs_review": {},
+    "sentiment": {},
+    "severity": {
+      "accuracy_accepted": 0.78,
+      "accuracy_strict": 0.78,
+      "macro_f1_accepted": 0.6752,
+      "macro_f1_strict": 0.6752
+    },
+    "topic": {
+      "accuracy_accepted": 0.82,
+      "accuracy_strict": 0.74,
+      "macro_f1_accepted": 0.6786,
+      "macro_f1_strict": 0.4291
+    }
+  },
+  "source": "pipeline.golden_eval (aggregate only)"
+}

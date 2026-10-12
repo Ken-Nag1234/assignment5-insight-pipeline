@@ -1,0 +1,68 @@
+{
+  "all_three_agree": 0.864,
+  "compared": 500,
+  "declared": 500,
+  "declared_sample": {
+    "population": "completed original records (cache copies excluded, one per distinct text)",
+    "scope": "analysis_10000",
+    "seed": "berkeley-fall-2026-assignment-5-verify-v1",
+    "selection": "lowest SHA-256(seed:review_id)",
+    "size": 500
+  },
+  "intent": {
+    "agreement": 0.964,
+    "confusion_first_vs_verifier": {
+      "cancellation->unclear": 1,
+      "complaint->cancellation": 4,
+      "complaint->request": 1,
+      "complaint->unclear": 7,
+      "praise->unclear": 2,
+      "request->complaint": 2,
+      "request->praise": 1
+    },
+    "kappa": 0.9452
+  },
+  "missing": 0,
+  "severity": {
+    "agreement": 0.918,
+    "confusion_first_vs_verifier": {
+      "1->2": 1,
+      "1->3": 1,
+      "2->1": 10,
+      "2->3": 9,
+      "2->4": 2,
+      "3->1": 1,
+      "3->2": 4,
+      "3->4": 13
+    },
+    "kappa": 0.8735,
+    "mean_abs_gap": 0.09,
+    "within_1": 0.992
+  },
+  "synthetic": false,
+  "topic": {
+    "agreement": 0.952,
+    "confusion_first_vs_verifier": {
+      "access->usability": 1,
+      "billing->other": 2,
+      "billing->playback": 1,
+      "catalog->billing": 1,
+      "catalog->other": 1,
+      "downloads->catalog": 1,
+      "other->billing": 2,
+      "other->catalog": 2,
+      "other->playback": 2,
+      "other->usability": 2,
+      "playback->downloads": 1,
+      "playback->usability": 3,
+      "usability->catalog": 1,
+      "usability->other": 1,
+      "usability->playback": 1
+    },
+    "kappa": 0.9291
+  },
+  "unresolved": 0,
+  "verify_label_config": [
+    "typesafe-ai/jev+verify-v1+s1"
+  ]
+}

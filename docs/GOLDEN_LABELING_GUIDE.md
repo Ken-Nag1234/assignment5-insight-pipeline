@@ -162,3 +162,58 @@ the shared definitions are applied.
 1. Run `python3 -m pipeline.golden validate` until it reports `valid=50` and no problems.
 2. Record the date you finished and any rules you added in `notes` or in a short message.
 3. Only then may the pipeline's golden-set evaluation be run.
+
+## Spreadsheet workflow
+
+Three prepared files hold identical blank rows; use **one** of them as your only working copy.
+
+| File | Use with | Notes |
+|---|---|---|
+| `golden/golden_50_labels.xlsx` | **Microsoft Excel (recommended)** | Dropdowns for categorical fields, frozen header, grey read-only columns, plus Definitions and Instructions sheets |
+| `golden/golden_50_labels_excel.csv` | Excel, if the workbook cannot be used | UTF-8 with BOM so Excel shows emoji and non-English text correctly |
+| `golden/golden_50_labels.csv` | Google Sheets or Apple Numbers | Plain UTF-8 CSV |
+
+`golden/golden_50_labels.blank_backup.csv` is an untouched blank copy for recovery. Never edit it.
+
+### Option A: Excel workbook (recommended)
+
+1. Open `golden/golden_50_labels.xlsx` in Excel. Work on the **Labels** sheet.
+2. Do not edit the grey columns (`review_id`, `source_sha256`, `review_text`), and do not rename the
+   sheet or reorder, insert or delete rows or columns.
+3. Use the dropdowns for `topic`, `intent`, `severity`, `sentiment`, `needs_review` and `ambiguous`.
+   Type `entities` (for example `[]` or `["ads"]`) using straight quotes, and paste `evidence_quote`.
+4. To copy an exact quote: select the `review_text` cell, select the words in the formula bar, copy,
+   then paste into `evidence_quote` with **Paste Special > Text** (or Cmd+Shift+V) so no formatting is added.
+5. Save with **File > Save** (keep the `.xlsx` format) after every ten rows.
+6. When finished, convert and validate:
+
+   ```sh
+   python3 -m pipeline.golden from-xlsx
+   python3 -m pipeline.golden validate --working golden/golden_50_labels_completed.csv
+   ```
+
+   Fix any reported problems in the workbook, save, and repeat with
+   `python3 -m pipeline.golden from-xlsx --overwrite` until the validator reports `valid=50`.
+
+### Option B: CSV in Google Sheets, Numbers or Excel
+
+1. Google Sheets: **File > Import > Upload**, separator "Comma", and turn **off** "Convert text to numbers,
+   dates and formulas". Numbers: open the CSV directly. Excel: open `golden_50_labels_excel.csv`, or use
+   **Data > From Text/CSV** with encoding **UTF-8**.
+2. Freeze the header row, wrap and widen the `review_text` column, and hide (do not delete) `source_sha256`.
+3. Optionally add data-validation dropdowns: `topic` (eight values), `intent` (five values),
+   `severity` (1-5), `sentiment` (-1, -0.5, 0, 0.5, 1), `needs_review` and `ambiguous` (true, false).
+4. Label one row at a time in the recommended order above.
+5. Export as **CSV (UTF-8)** and save it as `golden/golden_50_labels_completed.csv`, then run
+   `python3 -m pipeline.golden validate --working golden/golden_50_labels_completed.csv`.
+
+### Checks the validator performs
+
+- `review_id` list and order, `review_text` and `source_sha256` are unchanged.
+- Allowed values for `topic`, `intent`, `severity`, the -1 to 1 range for `sentiment`, `true`/`false`
+  for `needs_review` and `ambiguous` (spreadsheet `TRUE`/`FALSE` are accepted).
+- `entities` is a JSON list of nonempty strings; `evidence_quote` is an exact substring of `review_text`.
+- `ambiguous=true` rows list at least one `accepted_*` alternative.
+
+Expect about one minute per review (roughly one hour in total). The completed file stays out of Git
+until we decide how to publish the golden set.

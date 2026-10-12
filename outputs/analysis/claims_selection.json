@@ -1,0 +1,34 @@
+[
+  [
+    "playback.general",
+    "priority_score"
+  ],
+  [
+    "playback.crash",
+    "mean_severity"
+  ],
+  [
+    "billing.premium",
+    "priority_score"
+  ],
+  [
+    "usability.ads",
+    "priority_score"
+  ],
+  [
+    "usability.playlist",
+    "priority_score"
+  ],
+  [
+    "usability.update",
+    "priority_score"
+  ],
+  [
+    "access.login",
+    "mean_severity"
+  ],
+  [
+    "other.general",
+    "priority_score"
+  ]
+]

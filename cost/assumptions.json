@@ -1,0 +1,32 @@
+{
+  "_note": "Editable assumptions. Measured values come only from pilot_calls.jsonl and pilot_runs.json.",
+  "corpus": {
+    "source_rows": 660622,
+    "nonempty_rows": 660609,
+    "empty_text_quarantines": 13,
+    "distinct_nonempty_texts": 484189
+  },
+  "projection_targets": [100000, 660609],
+  "controls": {
+    "budget_usd": 10,
+    "output_token_cap": null,
+    "max_workers": 1,
+    "max_fallback_fraction": 0.0,
+    "fallback_cost_per_review_usd": null
+  },
+  "scenarios": {
+    "base": {"retry_rate": 0.02, "verification_rate": 0.01, "fallback_rate": 0.0, "token_multiplier": 1.0},
+    "conservative": {"retry_rate": 0.10, "verification_rate": 0.02, "fallback_rate": 0.0, "token_multiplier": 1.25}
+  },
+  "pre_pilot_assumptions": {
+    "_note": "Used ONLY when no measured cold pilot exists. Not measurements.",
+    "enrich_input_tokens_per_request": 700,
+    "enrich_input_price_per_m": "0.042",
+    "reviews_per_request": 1,
+    "seconds_per_request": 0.5
+  },
+  "local_compute": {
+    "description": "Ingestion, validation, grouping and ranking run on the author's personal laptop (macOS); no paid infrastructure.",
+    "cost_usd": null
+  }
+}

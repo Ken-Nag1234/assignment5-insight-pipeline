@@ -1,0 +1,9 @@
+claim_id,issue_id,metric,value
+C001,playback.general,priority_score,23681
+C002,playback.crash,mean_severity,3.757009
+C003,billing.premium,priority_score,18973
+C004,usability.ads,priority_score,17525
+C005,usability.playlist,priority_score,5456
+C006,usability.update,priority_score,6492
+C007,access.login,mean_severity,3.971487
+C008,other.general,priority_score,98177

@@ -1,0 +1,9 @@
+{
+  "allow_multi_issue": false,
+  "analysis_count": 660622,
+  "analysis_sha256": "1fc85de68a304dd8978b537cfa58793d5f41cbaf417fa32cb53899f83a2fcef6",
+  "classification_input_fields": [
+    "review_text"
+  ],
+  "version": "a5-audit-v1"
+}

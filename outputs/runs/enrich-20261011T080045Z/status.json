@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-11T08:01:23.560557+00:00",
+  "completed_this_run": {
+    "by_cache": 10,
+    "by_model": 65
+  },
+  "elapsed_s": 37.6,
+  "errors": {
+    "failed_requests": 0,
+    "invalid_outputs": 0,
+    "quarantined_this_run": 0
+  },
+  "eta_s": 78,
+  "label_config": "typesafe-ai/jev+p1+s1+x1",
+  "network": {
+    "down": false,
+    "not_sent_failures": 0,
+    "outages": 0,
+    "unknown_outcomes": 0,
+    "waited_s": 0.0
+  },
+  "phase": "resume",
+  "requests": {
+    "failed": 0,
+    "first_dispatches": 65,
+    "queued": 135,
+    "retries": 0,
+    "sent": 65,
+    "succeeded": 65
+  },
+  "requests_per_second": 1.731,
+  "reviews_in_scope": {
+    "completed": 2513,
+    "pending": 7487,
+    "quarantined": 0,
+    "total": 10000
+  },
+  "run_id": "enrich-20261011T080045Z",
+  "scope": {
+    "limit": null,
+    "max_requests": 200,
+    "requests_per_second": 2.0,
+    "sample": "analysis_10000",
+    "stratum": null,
+    "workers": 1
+  },
+  "spend_usd": {
+    "cap": "0.40",
+    "ledger_total": "0.052272696",
+    "reserved_in_flight": "0",
+    "this_run": "0.002403828"
+  },
+  "state": "finished",
+  "stop_reason": "interrupted"
+}

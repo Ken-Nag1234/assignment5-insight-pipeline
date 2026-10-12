@@ -1,0 +1,286 @@
+{
+  "ambiguous_cases": 5,
+  "confusion_strict": {
+    "intent": {
+      "matrix": {
+        "cancellation": {
+          "(missing)": 0,
+          "cancellation": 1,
+          "complaint": 0,
+          "praise": 0,
+          "request": 0,
+          "unclear": 0
+        },
+        "complaint": {
+          "(missing)": 0,
+          "cancellation": 0,
+          "complaint": 20,
+          "praise": 0,
+          "request": 1,
+          "unclear": 0
+        },
+        "praise": {
+          "(missing)": 0,
+          "cancellation": 0,
+          "complaint": 1,
+          "praise": 19,
+          "request": 0,
+          "unclear": 2
+        },
+        "request": {
+          "(missing)": 0,
+          "cancellation": 0,
+          "complaint": 0,
+          "praise": 0,
+          "request": 1,
+          "unclear": 0
+        },
+        "unclear": {
+          "(missing)": 0,
+          "cancellation": 1,
+          "complaint": 0,
+          "praise": 1,
+          "request": 0,
+          "unclear": 3
+        }
+      },
+      "rows_human_columns_predicted": [
+        "complaint",
+        "request",
+        "praise",
+        "cancellation",
+        "unclear",
+        "(missing)"
+      ]
+    },
+    "severity": {
+      "matrix": {
+        "1": {
+          "(missing)": 0,
+          "1": 26,
+          "2": 3,
+          "3": 0,
+          "4": 0,
+          "5": 0
+        },
+        "2": {
+          "(missing)": 0,
+          "1": 1,
+          "2": 7,
+          "3": 4,
+          "4": 0,
+          "5": 0
+        },
+        "3": {
+          "(missing)": 0,
+          "1": 0,
+          "2": 1,
+          "3": 2,
+          "4": 1,
+          "5": 0
+        },
+        "4": {
+          "(missing)": 0,
+          "1": 0,
+          "2": 0,
+          "3": 1,
+          "4": 4,
+          "5": 0
+        }
+      },
+      "rows_human_columns_predicted": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "(missing)"
+      ]
+    },
+    "topic": {
+      "matrix": {
+        "billing": {
+          "(missing)": 0,
+          "access": 0,
+          "billing": 1,
+          "catalog": 0,
+          "downloads": 0,
+          "other": 0,
+          "playback": 0,
+          "support": 0,
+          "usability": 1
+        },
+        "catalog": {
+          "(missing)": 0,
+          "access": 0,
+          "billing": 0,
+          "catalog": 2,
+          "downloads": 0,
+          "other": 1,
+          "playback": 0,
+          "support": 0,
+          "usability": 1
+        },
+        "downloads": {
+          "(missing)": 0,
+          "access": 0,
+          "billing": 1,
+          "catalog": 0,
+          "downloads": 0,
+          "other": 0,
+          "playback": 0,
+          "support": 0,
+          "usability": 0
+        },
+        "other": {
+          "(missing)": 0,
+          "access": 0,
+          "billing": 1,
+          "catalog": 0,
+          "downloads": 0,
+          "other": 24,
+          "playback": 0,
+          "support": 0,
+          "usability": 0
+        },
+        "playback": {
+          "(missing)": 0,
+          "access": 0,
+          "billing": 0,
+          "catalog": 1,
+          "downloads": 0,
+          "other": 0,
+          "playback": 3,
+          "support": 0,
+          "usability": 0
+        },
+        "support": {
+          "(missing)": 0,
+          "access": 0,
+          "billing": 0,
+          "catalog": 0,
+          "downloads": 0,
+          "other": 0,
+          "playback": 1,
+          "support": 0,
+          "usability": 0
+        },
+        "usability": {
+          "(missing)": 0,
+          "access": 0,
+          "billing": 1,
+          "catalog": 2,
+          "downloads": 0,
+          "other": 2,
+          "playback": 1,
+          "support": 0,
+          "usability": 7
+        }
+      },
+      "rows_human_columns_predicted": [
+        "access",
+        "usability",
+        "playback",
+        "downloads",
+        "catalog",
+        "billing",
+        "support",
+        "other",
+        "(missing)"
+      ]
+    }
+  },
+  "coverage": {
+    "missing": 0,
+    "pending": 0,
+    "predicted": 50,
+    "quarantined": 0,
+    "sha_mismatch": 0
+  },
+  "denominator": 50,
+  "label_configs": {
+    "typesafe-ai/jev+p1+s1+x1": 50
+  },
+  "metrics": {
+    "entities": {
+      "exact_set_match": 0.78,
+      "f1": 0.6667,
+      "human": 18,
+      "normalization": "lowercase and trim only",
+      "precision": 0.5556,
+      "predicted": 27,
+      "recall": 0.8333,
+      "true_positive": 15
+    },
+    "evidence_quote": {
+      "exact_substring": 1.0,
+      "overlaps_human_quote": 0.92
+    },
+    "intent": {
+      "accuracy_accepted": 0.88,
+      "accuracy_strict": 0.88,
+      "macro_f1_accepted": 0.7581,
+      "macro_f1_strict": 0.7581
+    },
+    "needs_review": {
+      "agreement": 0.78
+    },
+    "sentiment": {
+      "mae": 0.2189,
+      "tolerance": 0.5,
+      "within_tolerance": 0.88
+    },
+    "severity": {
+      "accuracy_accepted": 0.78,
+      "accuracy_strict": 0.78,
+      "error_distribution": {
+        "-1": 3,
+        "0": 39,
+        "1": 8
+      },
+      "macro_f1_accepted": 0.6752,
+      "macro_f1_strict": 0.6752,
+      "mae": 0.22,
+      "mean_signed_error": 0.1,
+      "within_1": 1.0
+    },
+    "topic": {
+      "accuracy_accepted": 0.82,
+      "accuracy_strict": 0.74,
+      "macro_f1_accepted": 0.6786,
+      "macro_f1_strict": 0.4291
+    }
+  },
+  "mismatching_reviews": 25,
+  "per_class_f1_strict": {
+    "intent": {
+      "cancellation": 0.6667,
+      "complaint": 0.9524,
+      "praise": 0.9048,
+      "request": 0.6667,
+      "unclear": 0.6
+    },
+    "severity": {
+      "1": 0.9286,
+      "2": 0.6087,
+      "3": 0.3636,
+      "4": 0.8
+    },
+    "topic": {
+      "billing": 0.3333,
+      "catalog": 0.4444,
+      "downloads": 0.0,
+      "other": 0.9231,
+      "playback": 0.6667,
+      "support": 0.0,
+      "usability": 0.6364
+    }
+  },
+  "rules": {
+    "accepted_alternatives": "accepted_* values count as correct in *_accepted metrics only",
+    "entity_normalization": "lowercase and trim only",
+    "missing_predictions": "counted as incorrect in every rate; excluded only from MAE averages",
+    "sentiment_tolerance": 0.5
+  },
+  "source": "pipeline.golden_eval on real typesafe-ai/jev predictions in a dedicated evaluation database"
+}

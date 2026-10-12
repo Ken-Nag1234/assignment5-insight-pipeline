@@ -1,0 +1,34 @@
+issue_id,topic,subtopic,name,members,grouping_version
+access.account,access,account,Access: account,26,g1
+access.general,access,general,Access: general,41,g1
+access.login,access,login,Access: login,99,g1
+billing.general,billing,general,Billing: general,212,g1
+billing.premium,billing,premium,Billing: premium,548,g1
+billing.price,billing,price,Billing: price,18,g1
+billing.subscription,billing,subscription,Billing: subscription,46,g1
+catalog.general,catalog,general,Catalog: general,105,g1
+catalog.lyrics,catalog,lyrics,Catalog: lyrics,58,g1
+catalog.podcasts,catalog,podcasts,Catalog: podcasts,3,g1
+catalog.recommendations,catalog,recommendations,Catalog: recommendations,12,g1
+catalog.search,catalog,search,Catalog: search,24,g1
+downloads.downloads,downloads,downloads,Downloads: downloads,61,g1
+downloads.general,downloads,general,Downloads: general,20,g1
+downloads.offline_mode,downloads,offline mode,Downloads: offline mode,15,g1
+other.general,other,general,Other: general,1388,g1
+playback.audio_quality,playback,audio quality,Playback: audio quality,7,g1
+playback.battery,playback,battery,Playback: battery,1,g1
+playback.bluetooth,playback,bluetooth,Playback: bluetooth,10,g1
+playback.buffering,playback,buffering,Playback: buffering,24,g1
+playback.car,playback,car,Playback: car,16,g1
+playback.crash,playback,crash,Playback: crash,47,g1
+playback.general,playback,general,Playback: general,538,g1
+support.customer_support,support,customer support,Support: customer support,2,g1
+support.general,support,general,Support: general,4,g1
+usability.ads,usability,ads,Usability: ads,443,g1
+usability.general,usability,general,Usability: general,331,g1
+usability.playlist,usability,playlist,Usability: playlist,154,g1
+usability.queue,usability,queue,Usability: queue,12,g1
+usability.shuffle,usability,shuffle,Usability: shuffle,58,g1
+usability.skip,usability,skip,Usability: skip,40,g1
+usability.update,usability,update,Usability: update,165,g1
+usability.widget,usability,widget,Usability: widget,4,g1

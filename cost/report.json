@@ -1,0 +1,369 @@
+{
+  "pilot_measured": true,
+  "rates_checked": [
+    "2026-10-09",
+    "2026-10-11"
+  ],
+  "cold": {
+    "kind": "cold",
+    "measured": true,
+    "run_meta": {
+      "batch_size": 1,
+      "cache_hits": 0,
+      "completed": 100,
+      "failed": 0,
+      "input": "cost_100.csv",
+      "input_rows": 100,
+      "input_sha256": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e",
+      "kind": "cold",
+      "models": {
+        "enrich": "typesafe-ai/jev",
+        "group": "openai/gpt-6-luna",
+        "memo": "openai/gpt-6-luna",
+        "verify": "typesafe-ai/jev"
+      },
+      "new_calls_by_role": {
+        "enrich": 100,
+        "group": 1,
+        "memo": 1,
+        "verify": 20
+      },
+      "pending": 0,
+      "quarantined": 0,
+      "requests_per_second": 2.0,
+      "stage_seconds": {
+        "enrich": 50.823,
+        "export": 0.018,
+        "group": 2.495,
+        "ingest": 0.128,
+        "memo": 12.597,
+        "verify": 10.067
+      },
+      "stamp": "20261012T011300085037Z",
+      "synthetic": false,
+      "unique_texts": 100,
+      "wall_clock_s": 76.131,
+      "workers": 1
+    },
+    "by_role": {
+      "enrich": {
+        "requests": 100,
+        "failed": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "reviews_sent": 100,
+        "input_tokens": "87787",
+        "output_tokens": "19649",
+        "cost_usd": "0.003687054",
+        "provider_reported_cost_usd": "0.003687054",
+        "models": [
+          "typesafe-ai/jev"
+        ],
+        "settings": [
+          "prompt p1, schema s1, extraction x1, 1 review/request"
+        ],
+        "seconds": 50.823
+      },
+      "verify": {
+        "requests": 20,
+        "failed": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "reviews_sent": 20,
+        "input_tokens": "18895",
+        "output_tokens": "3927",
+        "cost_usd": "0.000793590",
+        "provider_reported_cost_usd": "0.000793590",
+        "models": [
+          "typesafe-ai/jev"
+        ],
+        "settings": [
+          "prompt verify-v1, sample 20"
+        ],
+        "seconds": 10.067
+      },
+      "group": {
+        "requests": 1,
+        "failed": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "reviews_sent": 30,
+        "input_tokens": "2195",
+        "output_tokens": "150",
+        "cost_usd": "0.0002945",
+        "provider_reported_cost_usd": null,
+        "models": [
+          "openai/gpt-6-luna"
+        ],
+        "settings": [
+          "prompt n1, reasoning_effort=none, json_object, max_tokens 1500"
+        ],
+        "seconds": 2.495
+      },
+      "memo": {
+        "requests": 1,
+        "failed": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "reviews_sent": 30,
+        "input_tokens": "3555",
+        "output_tokens": "1575",
+        "cost_usd": "0.0011430",
+        "provider_reported_cost_usd": null,
+        "models": [
+          "openai/gpt-6-luna"
+        ],
+        "settings": [
+          "prompt m1, reasoning_effort=none, json_object, max_tokens 2500"
+        ],
+        "seconds": 12.597
+      }
+    },
+    "api_cost_usd": "0.005918144",
+    "cost_per_1000_inputs_usd": "0.05918144000",
+    "cost_per_completed_usd": "0.00005918144",
+    "throughput_rows_per_s": "1.313525370742535892080755540",
+    "new_enrich_calls": 100
+  },
+  "warm": {
+    "kind": "warm",
+    "measured": true,
+    "run_meta": {
+      "batch_size": 1,
+      "cache_hits": 0,
+      "completed": 100,
+      "failed": 0,
+      "input": "cost_100.csv",
+      "input_rows": 100,
+      "input_sha256": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e",
+      "kind": "warm",
+      "models": {
+        "enrich": "typesafe-ai/jev",
+        "group": "openai/gpt-6-luna",
+        "memo": "openai/gpt-6-luna",
+        "verify": "typesafe-ai/jev"
+      },
+      "new_calls_by_role": {
+        "enrich": 0,
+        "group": 0,
+        "memo": 0,
+        "verify": 0
+      },
+      "pending": 0,
+      "quarantined": 0,
+      "requests_per_second": 2.0,
+      "stage_seconds": {
+        "enrich": 0.005,
+        "export": 0.067,
+        "group": 0.011,
+        "ingest": 0.014,
+        "memo": 0.007,
+        "verify": 0.005
+      },
+      "stamp": "20261012T011416221898Z",
+      "synthetic": false,
+      "unique_texts": 0,
+      "wall_clock_s": 0.111,
+      "workers": 1
+    },
+    "by_role": {
+      "enrich": {
+        "requests": 0,
+        "failed": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "reviews_sent": 0,
+        "input_tokens": "0",
+        "output_tokens": "0",
+        "cost_usd": "0",
+        "provider_reported_cost_usd": "0",
+        "models": [],
+        "settings": [],
+        "seconds": 0.005
+      },
+      "verify": {
+        "requests": 0,
+        "failed": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "reviews_sent": 0,
+        "input_tokens": "0",
+        "output_tokens": "0",
+        "cost_usd": "0",
+        "provider_reported_cost_usd": "0",
+        "models": [],
+        "settings": [],
+        "seconds": 0.005
+      },
+      "group": {
+        "requests": 0,
+        "failed": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "reviews_sent": 0,
+        "input_tokens": "0",
+        "output_tokens": "0",
+        "cost_usd": "0",
+        "provider_reported_cost_usd": "0",
+        "models": [],
+        "settings": [],
+        "seconds": 0.011
+      },
+      "memo": {
+        "requests": 0,
+        "failed": 0,
+        "retries": 0,
+        "fallbacks": 0,
+        "reviews_sent": 0,
+        "input_tokens": "0",
+        "output_tokens": "0",
+        "cost_usd": "0",
+        "provider_reported_cost_usd": "0",
+        "models": [],
+        "settings": [],
+        "seconds": 0.007
+      }
+    },
+    "api_cost_usd": "0",
+    "cost_per_1000_inputs_usd": "0",
+    "cost_per_completed_usd": "0",
+    "throughput_rows_per_s": "900.9009009009009009009009009",
+    "new_enrich_calls": 0
+  },
+  "warm_zero_new_enrich_calls": true,
+  "projections": [
+    {
+      "scenario": "base",
+      "unit_cost_source": "measured_cold_pilot",
+      "target_rows": 100000,
+      "with_exact_text_reuse": {
+        "distinct_texts_to_classify": 73294,
+        "enrich_requests": 73294,
+        "enrich_usd": "2.75643714593520",
+        "verify_rows": 1000,
+        "verify_usd": "0.0404730900000",
+        "fallback_usd": "0",
+        "fixed_overhead_usd": "0.0014375",
+        "total_api_usd": "2.79834773593520",
+        "enrich_hours": "10.554226059",
+        "exceeds_budget": false
+      },
+      "no_reuse": {
+        "distinct_texts_to_classify": 100000,
+        "enrich_requests": 100000,
+        "enrich_usd": "3.76079508000000",
+        "verify_rows": 1000,
+        "verify_usd": "0.0404730900000",
+        "fallback_usd": "0",
+        "fixed_overhead_usd": "0.0014375",
+        "total_api_usd": "3.80270567000000",
+        "enrich_hours": "14.3998500",
+        "exceeds_budget": false
+      }
+    },
+    {
+      "scenario": "conservative",
+      "unit_cost_source": "measured_cold_pilot",
+      "target_rows": 100000,
+      "with_exact_text_reuse": {
+        "distinct_texts_to_classify": 73294,
+        "enrich_requests": 73294,
+        "enrich_usd": "3.71578536829500",
+        "verify_rows": 2000,
+        "verify_usd": "0.1091186250000",
+        "fallback_usd": "0",
+        "fixed_overhead_usd": "0.0014375",
+        "total_api_usd": "3.82634149329500",
+        "enrich_hours": "11.382008495",
+        "exceeds_budget": false
+      },
+      "no_reuse": {
+        "distinct_texts_to_classify": 100000,
+        "enrich_requests": 100000,
+        "enrich_usd": "5.06969925000000",
+        "verify_rows": 2000,
+        "verify_usd": "0.1091186250000",
+        "fallback_usd": "0",
+        "fixed_overhead_usd": "0.0014375",
+        "total_api_usd": "5.18025537500000",
+        "enrich_hours": "15.529250",
+        "exceeds_budget": false
+      }
+    },
+    {
+      "scenario": "base",
+      "unit_cost_source": "measured_cold_pilot",
+      "target_rows": 660609,
+      "with_exact_text_reuse": {
+        "distinct_texts_to_classify": 484189,
+        "enrich_requests": 484189,
+        "enrich_usd": "18.20935608990120",
+        "verify_rows": 6607,
+        "verify_usd": "0.2674057056300",
+        "fallback_usd": "0",
+        "fixed_overhead_usd": "0.0014375",
+        "total_api_usd": "18.47819929553120",
+        "enrich_hours": "69.7224897165",
+        "exceeds_budget": true
+      },
+      "no_reuse": {
+        "distinct_texts_to_classify": 660609,
+        "enrich_requests": 660609,
+        "enrich_usd": "24.84415077003720",
+        "verify_rows": 6607,
+        "verify_usd": "0.2674057056300",
+        "fallback_usd": "0",
+        "fixed_overhead_usd": "0.0014375",
+        "total_api_usd": "25.11299397566720",
+        "enrich_hours": "95.1267050865",
+        "exceeds_budget": true
+      }
+    },
+    {
+      "scenario": "conservative",
+      "unit_cost_source": "measured_cold_pilot",
+      "target_rows": 660609,
+      "with_exact_text_reuse": {
+        "distinct_texts_to_classify": 484189,
+        "enrich_requests": 484189,
+        "enrich_usd": "24.54692610158250",
+        "verify_rows": 13213,
+        "verify_usd": "0.7208921960625",
+        "fallback_usd": "0",
+        "fixed_overhead_usd": "0.0014375",
+        "total_api_usd": "25.26925579764500",
+        "enrich_hours": "75.1909202825",
+        "exceeds_budget": true
+      },
+      "no_reuse": {
+        "distinct_texts_to_classify": 660609,
+        "enrich_requests": 660609,
+        "enrich_usd": "33.49088951843250",
+        "verify_rows": 13213,
+        "verify_usd": "0.7208921960625",
+        "fallback_usd": "0",
+        "fixed_overhead_usd": "0.0014375",
+        "total_api_usd": "34.21321921449500",
+        "enrich_hours": "102.5876231325",
+        "exceeds_budget": true
+      }
+    }
+  ],
+  "controls": {
+    "budget_usd": 10,
+    "output_token_cap": null,
+    "max_workers": 1,
+    "max_fallback_fraction": 0.0,
+    "fallback_cost_per_review_usd": null
+  },
+  "local_compute": {
+    "description": "Ingestion, validation, grouping and ranking run on the author's personal laptop (macOS); no paid infrastructure.",
+    "cost_usd": null
+  },
+  "corpus": {
+    "source_rows": 660622,
+    "nonempty_rows": 660609,
+    "empty_text_quarantines": 13,
+    "distinct_nonempty_texts": 484189
+  }
+}

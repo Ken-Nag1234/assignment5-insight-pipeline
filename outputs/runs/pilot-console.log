@@ -1,0 +1,21 @@
+{
+  "cold": {
+    "wall_clock_s": 76.131,
+    "new_calls_by_role": {
+      "enrich": 100,
+      "group": 1,
+      "memo": 1,
+      "verify": 20
+    }
+  },
+  "warm": {
+    "wall_clock_s": 0.111,
+    "new_calls_by_role": {
+      "enrich": 0,
+      "group": 0,
+      "memo": 0,
+      "verify": 0
+    }
+  }
+}
+warm run made zero new enrichment calls: True

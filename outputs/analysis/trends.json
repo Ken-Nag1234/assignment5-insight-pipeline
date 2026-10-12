@@ -1,0 +1,36 @@
+{
+  "comparison": {
+    "2022": {
+      "complaint_or_cancellation": 10816,
+      "complaint_share": 0.162181,
+      "completed": 66691,
+      "months": [
+        "2022-06",
+        "2022-07",
+        "2022-08",
+        "2022-09",
+        "2022-10"
+      ],
+      "nonempty_reviews": 148357,
+      "weighted_complaint_share": 0.303026
+    },
+    "2023": {
+      "complaint_or_cancellation": 57907,
+      "complaint_share": 0.494589,
+      "completed": 117081,
+      "months": [
+        "2023-06",
+        "2023-07",
+        "2023-08",
+        "2023-09",
+        "2023-10"
+      ],
+      "nonempty_reviews": 273370,
+      "weighted_complaint_share": 0.581831
+    },
+    "change_in_share_points": 33.241,
+    "note": "Same complete months one year apart; partial first/last months excluded. complaint_share uses completed classifications as the denominator; weighted_complaint_share re-weights the duplicated-text and single-text strata to their populations within each month, because the run classified all duplicated texts but only part of the single texts. Reviews are self-selected and not a customer census.",
+    "weighted_change_in_share_points": 27.88
+  },
+  "scope": "full corpus"
+}

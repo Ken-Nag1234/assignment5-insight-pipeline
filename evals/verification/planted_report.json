@@ -1,0 +1,74 @@
+{
+  "detected": [
+    "0cdde190-fa4b-4ed1-a5b1-13ad7745ce2f",
+    "2799a14a-639f-4af7-a264-ad6424cc2491",
+    "2b651ab9-caf0-4471-a587-4db942270a80",
+    "609ddf2e-57b7-45ee-9517-817b305a8418",
+    "64910d54-b1ce-4c13-97ea-b0274b50279a",
+    "98939bc8-a697-4a07-a5e7-96721a535023",
+    "98f1d580-ce30-4595-af36-5e3f5cca76f7",
+    "9b0fbce2-1e76-48eb-b9eb-cbc415744b92",
+    "9e8e1ebc-9add-40af-80df-246b502f4fee",
+    "fba7981d-9ca6-44bd-97d7-5d16053b016d"
+  ],
+  "detection_rate": 1.0,
+  "missed": [],
+  "note": "Wrong labels were planted only in this in-memory test copy; stored labels are unchanged.",
+  "planted": {
+    "0cdde190-fa4b-4ed1-a5b1-13ad7745ce2f": {
+      "field": "topic",
+      "planted": "playback",
+      "real": "other"
+    },
+    "2799a14a-639f-4af7-a264-ad6424cc2491": {
+      "field": "topic",
+      "planted": "playback",
+      "real": "other"
+    },
+    "2b651ab9-caf0-4471-a587-4db942270a80": {
+      "field": "topic",
+      "planted": "other",
+      "real": "catalog"
+    },
+    "609ddf2e-57b7-45ee-9517-817b305a8418": {
+      "field": "topic",
+      "planted": "catalog",
+      "real": "usability"
+    },
+    "64910d54-b1ce-4c13-97ea-b0274b50279a": {
+      "field": "topic",
+      "planted": "playback",
+      "real": "other"
+    },
+    "98939bc8-a697-4a07-a5e7-96721a535023": {
+      "field": "topic",
+      "planted": "catalog",
+      "real": "usability"
+    },
+    "98f1d580-ce30-4595-af36-5e3f5cca76f7": {
+      "field": "topic",
+      "planted": "playback",
+      "real": "other"
+    },
+    "9b0fbce2-1e76-48eb-b9eb-cbc415744b92": {
+      "field": "topic",
+      "planted": "catalog",
+      "real": "usability"
+    },
+    "9e8e1ebc-9add-40af-80df-246b502f4fee": {
+      "field": "topic",
+      "planted": "playback",
+      "real": "other"
+    },
+    "fba7981d-9ca6-44bd-97d7-5d16053b016d": {
+      "field": "topic",
+      "planted": "playback",
+      "real": "other"
+    }
+  },
+  "planted_count": 10,
+  "synthetic_test_copy": true,
+  "verifier_label_configs": [
+    "typesafe-ai/jev+verify-v1+s1"
+  ]
+}

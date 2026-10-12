@@ -1,0 +1,143 @@
+{
+  "all_checks_pass": true,
+  "checks": [
+    {
+      "actual": 100,
+      "check": "profile.records == rows read",
+      "expected": 100,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "profile.empty_review_text == quarantined empty rows",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": 100,
+      "check": "every unique source ID has exactly one status",
+      "expected": 100,
+      "pass": true
+    },
+    {
+      "actual": 100,
+      "check": "pending == nonempty rows",
+      "expected": 100,
+      "pass": true
+    },
+    {
+      "actual": 0,
+      "check": "no quarantine other than empty_review_text at ingestion",
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "actual": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e",
+      "check": "file_sha256",
+      "expected": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e",
+      "pass": true
+    },
+    {
+      "actual": 15466,
+      "check": "file_bytes",
+      "expected": 15466,
+      "pass": true
+    }
+  ],
+  "code_version": "ingest-v1",
+  "field_quality": {
+    "blank_review_id": 0,
+    "duplicate_review_id_examples": [],
+    "duplicate_review_ids": 0,
+    "empty_review_text": 0,
+    "invalid_rating": 0,
+    "missing_app_version": 18,
+    "multiline_text": 0,
+    "nonnumeric_likes": 0,
+    "records": 100,
+    "unique_review_ids": 100,
+    "unparseable_timestamp": 0
+  },
+  "loaded_this_run": true,
+  "model_calls": 0,
+  "notes": [
+    "Nonempty reviews are queued as 'pending'; pending is not a quarantine and not a completed classification.",
+    "Only empty or whitespace-only texts are quarantined at ingestion (reason empty_review_text).",
+    "Missing app_version and star ratings do not affect classification eligibility."
+  ],
+  "profile": {
+    "counts": {
+      "duplicate_review_ids": 0,
+      "empty_review_text": 0,
+      "missing_app_version": 18,
+      "records": 100
+    },
+    "file_sha256": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e",
+    "first_review": "2022-06-02 10:30:18",
+    "last_review": "2023-11-13 15:07:19",
+    "parsed_rows_sha256": "23f840350257c058a03a508754384902373a593c09dbac3d1bd0481651fa1733",
+    "reviews_by_month": {
+      "2022-06": 5,
+      "2022-07": 5,
+      "2022-08": 6,
+      "2022-09": 5,
+      "2022-10": 4,
+      "2022-11": 1,
+      "2022-12": 2,
+      "2023-01": 4,
+      "2023-02": 4,
+      "2023-03": 7,
+      "2023-04": 4,
+      "2023-05": 5,
+      "2023-06": 4,
+      "2023-07": 11,
+      "2023-08": 3,
+      "2023-09": 6,
+      "2023-10": 19,
+      "2023-11": 5
+    },
+    "reviews_by_rating": {
+      "1": 33,
+      "2": 8,
+      "3": 6,
+      "4": 10,
+      "5": 43
+    }
+  },
+  "run_id": "ingest-20261010T211444Z-c884ac3b",
+  "source": {
+    "bytes": 15466,
+    "name": "cost_100.csv",
+    "parsed_rows_sha256": "23f840350257c058a03a508754384902373a593c09dbac3d1bd0481651fa1733",
+    "sha256": "c884ac3b9be5066995d5063f96ad9af6e5e082975788c1684c4f6b6ea661dd0e"
+  },
+  "stage": "ingest",
+  "statuses": {
+    "completed": 0,
+    "pending": 100,
+    "quarantined": 0
+  },
+  "text": {
+    "distinct_nonempty_texts": 100,
+    "duplicate_text_groups": 0,
+    "empty_rows_quarantined": 0,
+    "largest_duplicate_text_group": 0,
+    "length_chars": {
+      "max": 486,
+      "mean": 80.42,
+      "p50": 46,
+      "p90": 183,
+      "p99": 435,
+      "total": 8042
+    },
+    "nonempty_rows": 100,
+    "rows_in_duplicate_text_groups": 0,
+    "rows_reusable_via_exact_text_cache": 0
+  },
+  "timing": {
+    "finished_at": "2026-10-10T21:14:44.806735+00:00",
+    "load_seconds": 0.018,
+    "started_at": "2026-10-10T21:14:44.784544+00:00",
+    "total_seconds": 0.022
+  }
+}

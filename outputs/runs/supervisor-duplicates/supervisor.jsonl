@@ -1,0 +1,3 @@
+{"at": "2026-10-11T17:21:52.854914+00:00", "caffeinate": true, "command": ["/Library/Frameworks/Python.framework/Versions/3.13/bin/python3", "-m", "pipeline.enrich", "--db", "work/pipeline.sqlite", "--provider", "jev", "--budget-usd", "4.00", "--workers", "2", "--rps", "4", "--execute", "--out", "outputs/runs", "--stratum", "duplicates"], "event": "supervisor_started", "max_restarts": 10, "restart_delay_s": 600.0, "supervisor_pid": 17277}
+{"at": "2026-10-11T18:28:00.968949+00:00", "event": "child_exited", "exit_code": 0, "reason": "finished", "seconds": 3968.0, "supervisor_pid": 17277}
+{"at": "2026-10-11T18:28:00.972968+00:00", "event": "supervisor_finished", "last_exit_code": 0, "restarts": 0, "result": "finished", "supervisor_pid": 17277}

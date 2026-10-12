@@ -1,0 +1,17 @@
+{
+  "access.login": "Account Login Problems",
+  "billing.general": "General Payment and Billing Issues",
+  "billing.premium": "Premium Billing and Feature Access",
+  "billing.subscription": "Subscription Access and Pricing",
+  "catalog.general": "General Music Catalog Issues",
+  "catalog.lyrics": "Missing or Unavailable Song Lyrics",
+  "downloads.downloads": "Music Download Problems",
+  "other.general": "General Spotify App Complaints",
+  "playback.crash": "App Crashes During Playback",
+  "playback.general": "General Music Playback Issues",
+  "usability.ads": "Excessive Advertising in App",
+  "usability.general": "General App Usability Issues",
+  "usability.playlist": "Playlist Management and Playback Issues",
+  "usability.shuffle": "Shuffle Mode and Playback Controls",
+  "usability.update": "Usability Problems After Updates"
+}
